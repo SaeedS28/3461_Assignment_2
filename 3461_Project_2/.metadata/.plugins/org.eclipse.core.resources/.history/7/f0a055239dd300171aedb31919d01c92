@@ -1,0 +1,39 @@
+import javax.swing.JFrame;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.*;
+
+public class LoginScreen extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel mainPanel;
+	JLabel label;
+	public LoginScreen(){
+		
+		//Window initialization
+		super("Login Screen");
+		this.setSize(700,500);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		//Component initialization
+		//this.getContentPane().setLayout(null);
+		label=new JLabel("Thiis is a test");
+		label.setVisible(true);
+		mainPanel = new JPanel();
+		mainPanel.setSize(200, 150);
+		
+		mainPanel.setLayout(new GridBagLayout());
+		mainPanel.add(label, new GridBagConstraints());
+		
+		this.add(mainPanel);
+		
+	}
+
+}

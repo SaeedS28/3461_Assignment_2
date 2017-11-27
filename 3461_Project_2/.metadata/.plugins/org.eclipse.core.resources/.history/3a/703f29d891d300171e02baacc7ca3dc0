@@ -1,0 +1,10 @@
+import javax.swing.JFrame;
+
+public class LoginScreen extends JFrame {
+	
+	public LoginScreen(){
+		super("Login Screen");
+		this.setSize(800,800);
+	}
+
+}
