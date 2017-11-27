@@ -76,14 +76,4 @@ public class Course
 	{
 		this.coursePrequisites = coursePrerequisites;
 	}
-	
-	public float getMarkPrerequisite()
-	{
-		return this.markPrerequisite;
-	}
-	
-	public void setMarkPrerequisite(float markPrerequisite)
-	{
-		this.markPrerequisite = markPrerequisite;
-	}
 }

@@ -57,33 +57,10 @@ public class Course
 		this.courseDescription = courseDescription;
 	}
 	
-	public String getCourseFaculty()
-	{
-		return this.courseFaculty;
-	}
 	
-	public void setCourseFaculty(String courseFaculty)
-	{
-		this.courseFaculty = courseFaculty;
-	}
 	
-	public ArrayList<Course> getCoursePrerequisites()
-	{
-		return this.coursePrequisites;
-	}
 	
-	public void setCoursePrerequisites(ArrayList<Course> coursePrerequisites)
-	{
-		this.coursePrequisites = coursePrerequisites;
-	}
 	
-	public float getMarkPrerequisite()
-	{
-		return this.markPrerequisite;
-	}
 	
-	public void setMarkPrerequisite(float markPrerequisite)
-	{
-		this.markPrerequisite = markPrerequisite;
-	}
+	
 }

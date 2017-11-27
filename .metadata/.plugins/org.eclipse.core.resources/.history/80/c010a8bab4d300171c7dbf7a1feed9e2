@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+
+public class Course 
+{
+	private String courseName;
+	private String courseTerm;
+	private String courseDescription;
+	private String courseFaculty;
+	private ArrayList<Course> coursePrequisites;
+	
+	
+	public Course(String courseName, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, float markPrerequisites)
+	{
+		
+	}
+}
