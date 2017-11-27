@@ -15,14 +15,6 @@ public class Course
 	
 	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, ArrayList<Student> enrolledStudents, float markPrerequisite)
 	{
-		this.setCourseName(courseName);
-		this.setCourseCode(courseCode);
-		this.setCourseTerm(courseTerm);
-		this.setCourseDescription(courseDescription);
-		this.setCourseFaculty(courseFaculty);
-		this.setCoursePrerequisites(coursePrerequisites);
-		this.setEnrolledStudents(enrolledStudents);
-		this.setMarkPrerequisite(markPrerequisite);
 		
 	}
 	

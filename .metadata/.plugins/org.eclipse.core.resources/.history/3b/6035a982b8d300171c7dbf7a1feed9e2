@@ -9,20 +9,11 @@ public class Course
 	private String courseDescription;
 	private String courseFaculty;
 	private ArrayList<Course> coursePrequisites;
-	private ArrayList<Student> enrolledStudents;
 	private float markPrerequisite;
 	
 	
-	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, ArrayList<Student> enrolledStudents, float markPrerequisite)
+	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, float markPrerequisite)
 	{
-		this.setCourseName(courseName);
-		this.setCourseCode(courseCode);
-		this.setCourseTerm(courseTerm);
-		this.setCourseDescription(courseDescription);
-		this.setCourseFaculty(courseFaculty);
-		this.setCoursePrerequisites(coursePrerequisites);
-		this.setEnrolledStudents(enrolledStudents);
-		this.setMarkPrerequisite(markPrerequisite);
 		
 	}
 	
@@ -84,16 +75,6 @@ public class Course
 	public void setCoursePrerequisites(ArrayList<Course> coursePrerequisites)
 	{
 		this.coursePrequisites = coursePrerequisites;
-	}
-	
-	public ArrayList<Student> getEnrolledStudents()
-	{
-		return this.enrolledStudents;
-	}
-	
-	public void setEnrolledStudents(ArrayList<Student> enrolledStudents)
-	{
-		this.enrolledStudents = enrolledStudents;
 	}
 	
 	public float getMarkPrerequisite()
