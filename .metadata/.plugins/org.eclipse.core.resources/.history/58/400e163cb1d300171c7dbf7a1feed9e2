@@ -1,0 +1,11 @@
+
+import java.lang.*;
+
+public class Student 
+{
+	
+	public Student(String firstName, String lastName, int studentNo, String studentProgram, int 
+studentYear, String studentFaculty, ArrayList[Course] finishedCourses, int completedCredits, int remainingCredits)
+	
+
+}
