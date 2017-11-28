@@ -1,0 +1,110 @@
+import javax.swing.JFrame;
+
+import java.awt.Font;
+
+import javax.swing.*;
+
+public class LoginScreen extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static final String title = "<html><color=\"#9A0100><center>Welcome to the <br /> York University REM<center /><color></html>";
+	
+	JPanel mainPanelUserName;
+	JPanel mainPanelPassword;
+	JPanel mainPanelPasswordField;
+	JPanel mainPanelUserNameField;
+	JPanel buttonPanel;
+	JPanel titlePanel;
+	
+	JLabel userNameLabel;
+	JLabel passWordLabel;
+	JLabel titleLabel;
+	
+	JButton login;
+	JTextField userNameField;
+	JPasswordField passwordField;	
+	
+	public LoginScreen(){
+		
+		//Window initialization
+		super("Login Screen");
+		this.setSize(750,500);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		//Component initialization
+		this.getContentPane().setLayout(null);
+		mainPanelUserName = new JPanel();
+
+		Font font= new Font("Arial", Font.BOLD, 20);
+		Font titleFont= new Font("Arial", Font.BOLD, 26);
+		
+		//Title components
+		titleLabel = new JLabel(title);
+		titleLabel.setVisible(true);
+		titleLabel.setFont(titleFont);
+		titlePanel = new JPanel();
+		titlePanel.setLocation(230,50);
+		titlePanel.setSize(300, 150);
+		titlePanel.add(titleLabel);
+		
+		//userName tag components
+		mainPanelUserName =new JPanel();
+		userNameLabel = new JLabel("Username:");
+		userNameLabel.setFont(font);
+		userNameLabel.setVisible(true);
+		mainPanelUserName.setSize(100,70);
+		mainPanelUserName.setLocation(100, 150);
+		mainPanelUserName.add(userNameLabel);
+		
+		//useName textField components
+		mainPanelUserNameField = new JPanel();
+		userNameField = new JTextField(20);
+		userNameField.setFont(font);
+		userNameField.setVisible(true);
+		mainPanelUserNameField.setLocation(250, 150);
+		mainPanelUserNameField.setSize(350, 40);
+		mainPanelUserNameField.add(userNameField);
+		
+		//passWord tag components
+		mainPanelPassword = new JPanel();
+		passWordLabel = new JLabel("Password:");
+		passWordLabel.setVisible(true);
+		passWordLabel.setFont(font);
+		mainPanelPassword.setSize(100,90);
+		mainPanelPassword.setLocation(100, 220);
+		mainPanelPassword.add(passWordLabel);
+		
+		//password passwordField components
+		mainPanelPasswordField = new JPanel();
+		passwordField = new JPasswordField(20);
+		passwordField.setVisible(true);
+		passwordField.setFont(font);
+		mainPanelPasswordField.setSize(350,40);
+		mainPanelPasswordField.setLocation(250, 220);
+		mainPanelPasswordField.add(passwordField);
+		
+		//login button components
+		login = new JButton("Login");
+		login.setFont(font);
+		login.setVisible(true);
+		buttonPanel = new JPanel();
+		buttonPanel.setSize(90, 50);
+		buttonPanel.setLocation(330, 375);
+		buttonPanel.add(login);
+		
+		//add components to the frame
+		this.add(mainPanelUserName);
+		this.add(mainPanelUserNameField);
+		this.add(mainPanelPassword);
+		this.add(mainPanelPasswordField);
+		this.add(buttonPanel);
+		this.add(titlePanel);
+	}
+	
+
+}
