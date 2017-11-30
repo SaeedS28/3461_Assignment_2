@@ -28,7 +28,7 @@ public class CourseSelectForm extends JFrame {
 	
 	@SuppressWarnings("rawtypes")
 	public CourseSelectForm() {
-		super("Select Lab/Tutorial");
+		super("Select Courses");
 		
 		this.setSize(675,500);
 		this.setResizable(false);

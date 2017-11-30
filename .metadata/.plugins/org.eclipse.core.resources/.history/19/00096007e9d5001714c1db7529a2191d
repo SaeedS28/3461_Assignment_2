@@ -1,0 +1,75 @@
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+
+public class AddTutorialLabs extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel titlePanel;
+	JLabel title;
+	JList courseOption;
+	JScrollPane scroller;
+	JPanel listPanel;
+	JPanel confirmPanel;
+	JButton confirm;
+	String [] dummyData= {"1","2","3","4","5","6"};
+	
+	public AddTutorialLabs() {
+		super("Add Lab/and or Tutorial");
+		
+		this.setSize(675,500);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		//Component initialization
+		this.getContentPane().setLayout(null);
+		
+		Font font= new Font("Arial", Font.BOLD, 26);
+		Font font2= new Font("Arial", Font.BOLD, 20);
+		
+		//Title components
+		titlePanel=new JPanel();
+		title=new JLabel("Select ONE lab and/or ONE tutorial");
+		title.setFont(font);
+		title.setVisible(true);
+		titlePanel.setLocation(130, 50);
+		titlePanel.setSize(450, 70);
+		titlePanel.add(title);
+		
+		//List components
+		courseOption = new JList(dummyData);
+		courseOption.setVisible(true);
+		courseOption.setFont(font2);
+		courseOption.setVisibleRowCount(8);
+		courseOption.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		scroller=new JScrollPane(courseOption);
+		listPanel = new JPanel();
+		listPanel.setLocation(175,130);
+		listPanel.setSize(75,225);
+		listPanel.add(scroller);
+		
+		//Cancel button components
+		confirm=new JButton("Confirm");
+		confirm.setFont(font2);
+		confirm.setVisible(true);
+		confirmPanel=new JPanel();
+		confirmPanel.setLocation(290, 375);
+		confirmPanel.setSize(100, 50);
+		confirmPanel.add(confirm);
+		
+		//Add things to the JFrame
+		this.add(titlePanel);
+		this.add(listPanel);
+		this.add(confirmPanel);
+	}
+}
