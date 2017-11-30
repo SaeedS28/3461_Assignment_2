@@ -30,7 +30,7 @@ public class CourseSelectForm extends JFrame {
 	public CourseSelectForm() {
 		super("Select Courses");
 		
-		this.setSize(675,500);
+		this.setSize(700,700);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -94,8 +94,8 @@ public class CourseSelectForm extends JFrame {
 		cancel.setFont(font2);
 		cancel.setVisible(true);
 		cancelPanel=new JPanel();
-		cancelPanel.setLocation(355, 400);
-		cancelPanel.setSize(100, 50);
+		cancelPanel.setLocation(300, 400);
+		cancelPanel.setSize(95, 50);
 		cancelPanel.add(cancel);
 		
 		//Add things to the JFrame
