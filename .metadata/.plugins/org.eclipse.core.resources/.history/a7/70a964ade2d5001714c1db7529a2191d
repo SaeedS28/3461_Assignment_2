@@ -6,7 +6,7 @@ public class Launcher {
 		//CourseSelectForm course=new CourseSelectForm();
 		//course.setVisible(true);
 		DegreeProgress dg=new DegreeProgress();
-		dg.setVisible(true);
+		dg.setVisible(true)
 	}
 
 }

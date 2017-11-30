@@ -1,0 +1,107 @@
+import java.awt.Font;
+
+import javax.swing.*;
+public class DegreeProgress extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	JPanel titlePanel;
+	JLabel title;
+	JList courseOption;
+	JScrollPane scroller;
+	JPanel listPanel;
+	JPanel captionTitle;
+	JLabel captionTitleLabel;
+	JPanel textPanel;
+	JTextField text;
+	JPanel enterPanel;
+	JButton enter;
+	JPanel cancelPanel;
+	JButton cancel;
+	String [] dummyData= {"1","2","3","4","5","6"};
+	
+	
+	@SuppressWarnings("rawtypes")
+	public DegreeProgress() {
+		super("Select Courses");
+		
+		this.setSize(675,500);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		//Component initialization
+		this.getContentPane().setLayout(null);
+		
+		Font font= new Font("Arial", Font.BOLD, 26);
+		Font font2= new Font("Arial", Font.BOLD, 20);
+		
+		//Title components
+		titlePanel=new JPanel();
+		title=new JLabel("Select course from the list");
+		title.setFont(font);
+		title.setVisible(true);
+		titlePanel.setLocation(165, 50);
+		titlePanel.setSize(350, 70);
+		titlePanel.add(title);
+		
+		//List components
+		courseOption = new JList(dummyData);
+		courseOption.setVisible(true);
+		courseOption.setFont(font2);
+		courseOption.setVisibleRowCount(4);
+		courseOption.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		scroller=new JScrollPane(courseOption);
+		listPanel = new JPanel();
+		listPanel.setLocation(175,130);
+		listPanel.setSize(75,120);
+		listPanel.add(scroller);
+		
+		//Or enter the course code title
+		captionTitleLabel=new JLabel("Or enter the course code below");
+		captionTitleLabel.setFont(font);
+		captionTitleLabel.setVisible(true);
+		captionTitle=new JPanel();
+		captionTitle.setLocation(135,300);
+		captionTitle.setSize(400, 70);
+		captionTitle.add(captionTitleLabel);
+		
+		//textfield component
+		text = new JTextField(15);
+		text.setFont(font2);
+		text.setVisible(true);
+		textPanel = new JPanel();
+		textPanel.setLocation(190, 350);
+		textPanel.setSize(275,40);
+		textPanel.add(text);
+		
+		//Enter button components
+		enter=new JButton("Enter");
+		enter.setFont(font2);
+		enter.setVisible(true);
+		enterPanel=new JPanel();
+		enterPanel.setLocation(190, 400);
+		enterPanel.setSize(95, 50);
+		enterPanel.add(enter);
+		
+		//Cancel button components
+		cancel=new JButton("Cancel");
+		cancel.setFont(font2);
+		cancel.setVisible(true);
+		cancelPanel=new JPanel();
+		cancelPanel.setLocation(355, 400);
+		cancelPanel.setSize(100, 50);
+		cancelPanel.add(cancel);
+		
+		//Add things to the JFrame
+		this.add(titlePanel);
+		this.add(listPanel);
+		this.add(captionTitle);
+		this.add(textPanel);
+		this.add(enterPanel);
+		this.add(cancelPanel);
+
+}
