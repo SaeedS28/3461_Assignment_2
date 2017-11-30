@@ -1,0 +1,13 @@
+import javax.swing.JFrame;
+
+public class CourseSelectForm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public CourseSelectForm() {
+		super("Select Courses");
+	}
+}
