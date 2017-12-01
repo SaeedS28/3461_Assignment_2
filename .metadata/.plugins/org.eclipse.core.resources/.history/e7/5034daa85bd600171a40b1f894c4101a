@@ -17,7 +17,7 @@ public class MainForm extends JFrame{
 	public MainForm() {
 		//House Keeping
 		super("An overview");
-		this.setSize(800,785);
+		this.setSize(800,900);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -40,9 +40,9 @@ public class MainForm extends JFrame{
 		degreeProgress.setFont(font2);
 		degreeProgress.setVisible(true);
 		degreeProgressPanel=new JPanel();
-		degreeProgressPanel.setLocation(593,700);
-		degreeProgressPanel.setSize(200,50);
-		degreeProgressPanel.add(degreeProgress);
+		degreeProgressPanel.setLocation(680,700);
+		degreeProgressPanel.setSize(120,50);
+		degreeProgressPanel.add(logout);
 		
 		//Adding to the form
 		this.add(logoutPanel);

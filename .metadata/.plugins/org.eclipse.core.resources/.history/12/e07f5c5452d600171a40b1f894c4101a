@@ -9,12 +9,8 @@ public class Launcher {
 		//dg.setVisible(true);
 		//AddLabs tl=new AddLabs();
 		//tl.setVisible(true);
-		//AddTutorial tl=new AddTutorial();
-		//tl.setVisible(true);
-		
-		MainForm main = new MainForm();
-		main.setVisible(true);
-		
+		AddTutorial tl=new AddTutorial();
+		tl.setVisible(true);
 	}
 
 }

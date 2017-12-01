@@ -17,7 +17,7 @@ public class MainForm extends JFrame{
 	public MainForm() {
 		//House Keeping
 		super("An overview");
-		this.setSize(800,785);
+		this.setSize(800,820);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
