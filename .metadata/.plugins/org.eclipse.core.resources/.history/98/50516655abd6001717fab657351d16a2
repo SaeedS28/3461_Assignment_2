@@ -51,12 +51,12 @@ public class MainForm extends JFrame{
 		logoutPanel.add(logout);
 		
 		//Information Panel
-		personInformation=new JLabel("<html>This is complete <br/> bullshit "
+		personInformation=new JLabel("<html>This is complete bullshit<br />"
 				+ "that will be over-written </html>");
 		personInformation.setVisible(true);
 		personInformation.setFont(font2);
 		personInformationPanel=new JPanel();
-		personInformationPanel.setLocation(30, 450);
+		personInformationPanel.setLocation(30, 550);
 		personInformationPanel.setSize(400, 250);
 		personInformationPanel.add(personInformation);
 		

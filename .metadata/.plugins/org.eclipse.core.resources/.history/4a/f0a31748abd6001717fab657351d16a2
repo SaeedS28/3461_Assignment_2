@@ -51,13 +51,13 @@ public class MainForm extends JFrame{
 		logoutPanel.add(logout);
 		
 		//Information Panel
-		personInformation=new JLabel("<html>This is complete <br/> bullshit "
+		personInformation=new JLabel("<html>This is complete bullshit<br />"
 				+ "that will be over-written </html>");
 		personInformation.setVisible(true);
 		personInformation.setFont(font2);
 		personInformationPanel=new JPanel();
-		personInformationPanel.setLocation(30, 450);
-		personInformationPanel.setSize(400, 250);
+		personInformationPanel.setLocation(30, 600);
+		personInformationPanel.setSize(400, 150);
 		personInformationPanel.add(personInformation);
 		
 		//Degree progress components

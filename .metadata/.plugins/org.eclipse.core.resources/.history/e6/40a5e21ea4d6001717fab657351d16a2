@@ -16,8 +16,6 @@ public class MainForm extends JFrame{
 	JLabel title;
 	JPanel personInformationPanel;
 	JLabel personInformation;
-	
-
 	private static final long serialVersionUID = 1L;
 	
 	public MainForm() {
@@ -29,16 +27,16 @@ public class MainForm extends JFrame{
 		this.setLocationRelativeTo(null);
 		this.getContentPane().setLayout(null);
 		
-		Font font= new Font("Arial", Font.BOLD, 30);
+		Font font= new Font("Arial", Font.BOLD, 26);
 		Font font2= new Font("Arial", Font.BOLD, 20);
 		
 		//Title components
-		title=new JLabel("Courses: ");
+		title=new JLabel("Courses");
 		title.setFont(font);
 		title.setVisible(true);
 		titlePanel = new JPanel();
 		titlePanel.setLocation(30, 40);
-		titlePanel.setSize(150, 50);
+		titlePanel.setSize(100, 50);
 		titlePanel.add(title);
 		
 		//Logout components
@@ -49,16 +47,6 @@ public class MainForm extends JFrame{
 		logoutPanel.setLocation(680,0);
 		logoutPanel.setSize(120,50);
 		logoutPanel.add(logout);
-		
-		//Information Panel
-		personInformation=new JLabel("<html>This is complete <br/> bullshit "
-				+ "that will be over-written </html>");
-		personInformation.setVisible(true);
-		personInformation.setFont(font2);
-		personInformationPanel=new JPanel();
-		personInformationPanel.setLocation(30, 450);
-		personInformationPanel.setSize(400, 250);
-		personInformationPanel.add(personInformation);
 		
 		//Degree progress components
 		degreeProgress=new JButton("Degree Progress");
@@ -72,7 +60,6 @@ public class MainForm extends JFrame{
 		//Adding to the form
 		this.add(logoutPanel);
 		this.add(degreeProgressPanel);
-		this.add(personInformationPanel);
 		this.add(titlePanel);
 	}
 
