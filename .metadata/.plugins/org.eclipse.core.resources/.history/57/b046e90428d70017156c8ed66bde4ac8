@@ -61,7 +61,7 @@ public class MainForm extends JFrame{
 				personInformation.setVisible(true);
 				personInformation.setFont(font2);
 				personInformationPanel=new JPanel();
-				personInformationPanel.setLocation(30, 500);
+				personInformationPanel.setLocation(30, 450);
 				personInformationPanel.setSize(400, 250);
 				personInformationPanel.add(personInformation);
 				

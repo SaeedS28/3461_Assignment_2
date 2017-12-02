@@ -24,7 +24,7 @@ public class CompositeAdd {
 		addButton = new JButton("+");
 		addButton.setVisible(true);
 		addButton.setFont(font);
-		courseDetails = new JLabel("SXSM 1560: Intro to Porn Studies");
+		courseDetails = new JLabel("SXSM 1560: Intro to Porn");
 		courseDetails.setVisible(true);
 		courseDetails.setFont(font);
 		
