@@ -103,26 +103,6 @@ public class MainForm extends JFrame{
 					this.add(test[i].getExchangePanel());
 					this.add(test[i].getCourseDetailPanel());
 				}
-				
-				addCourse.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						if(arg0.getSource()==addCourse) {
-							if(count<test.length) {
-								test[count].getRemoveButton().setVisible(true);
-								test[count].getExchangeButton().setVisible(true);
-								test[count].getCourseLabel().setVisible(true);
-								test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
-								count++;
-							}
-							else {
-								JOptionPane.showMessageDialog(null, "Too many courses!");
-							}
-						}
-					}
-					
-				});
 	}	
 
 }

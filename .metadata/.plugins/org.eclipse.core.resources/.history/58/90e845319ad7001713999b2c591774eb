@@ -8,9 +8,9 @@ public class CompositeAdd {
 	JPanel exchangePanel;
 	JPanel courseDetailsPanel;
 	JButton exchangeButton;
-	JButton removeButton;
+	JButton addButton;
 	JLabel courseDetails;
-	static int count=30;
+	static int count=40;
 	
 	public CompositeAdd() {
 		count+=40;
@@ -20,20 +20,20 @@ public class CompositeAdd {
 		courseDetailsPanel =new JPanel();
 		exchangeButton = new JButton("+/-");
 		exchangeButton.setToolTipText("Exchange the course with another");
-		exchangeButton.setVisible(false);
+		exchangeButton.setVisible(true);
 		exchangeButton.setFont(font);
-		removeButton = new JButton("-");
-		removeButton.setToolTipText("Remove the course");
-		removeButton.setVisible(false);
-		removeButton.setFont(font);
+		addButton = new JButton("-");
+		addButton.setToolTipText("Remove the course");
+		addButton.setVisible(true);
+		addButton.setFont(font);
 		courseDetails = new JLabel();
-		courseDetails.setVisible(false);
+		courseDetails.setVisible(true);
 		courseDetails.setFont(font);
 		
 		//component setup
 		addPanel.setLocation(400, count);
 		addPanel.setSize(50,40);
-		addPanel.add(removeButton);
+		addPanel.add(addButton);
 		
 		exchangePanel.setLocation(460, count);
 		exchangePanel.setSize(60,40);
@@ -46,17 +46,8 @@ public class CompositeAdd {
 		
 		
 	}
-	
 	public JLabel getCourseLabel() {
 		return courseDetails;
-	}
-	
-	public JButton getExchangeButton() {
-		return this.exchangeButton;
-	}
-	
-	public JButton getRemoveButton() {
-		return this.removeButton;
 	}
 	
 	public JPanel getAddPanel() {

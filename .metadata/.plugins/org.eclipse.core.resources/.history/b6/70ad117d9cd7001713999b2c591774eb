@@ -55,7 +55,7 @@ public class CompositeAdd {
 		return this.exchangeButton;
 	}
 	
-	public JButton getRemoveButton() {
+	public JButton getremoveButton() {
 		return this.removeButton;
 	}
 	

@@ -116,9 +116,6 @@ public class MainForm extends JFrame{
 								test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
 								count++;
 							}
-							else {
-								JOptionPane.showMessageDialog(null, "Too many courses!");
-							}
 						}
 					}
 					
