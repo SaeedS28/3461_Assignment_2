@@ -9,11 +9,11 @@ public class Course
 	private String courseDescription;
 	private String courseFaculty;
 	private ArrayList<Course> coursePrequisites;
-	private ArrayList<Student> enrolledStudents;
+	private ArrayList<StudentInfo> enrolledStudents;
 	private float markPrerequisite;
 	
 	
-	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, ArrayList<Student> enrolledStudents, float markPrerequisite)
+	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, ArrayList<StudentInfo> enrolledStudents, float markPrerequisite)
 	{
 		this.setCourseName(courseName);
 		this.setCourseCode(courseCode);
@@ -86,12 +86,12 @@ public class Course
 		this.coursePrequisites = coursePrerequisites;
 	}
 	
-	public ArrayList<Student> getEnrolledStudents()
+	public ArrayList<StudentInfo> getEnrolledStudents()
 	{
 		return this.enrolledStudents;
 	}
 	
-	public void setEnrolledStudents(ArrayList<Student> enrolledStudents)
+	public void setEnrolledStudents(ArrayList<StudentInfo> enrolledStudents)
 	{
 		this.enrolledStudents = enrolledStudents;
 	}

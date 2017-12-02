@@ -1,0 +1,23 @@
+import java.util.*;
+
+
+public class StudentLogin 
+{
+	private String userName;
+	private String password;
+	
+	public StudentLogin(String userName, String password)
+	{
+		this.userName = userName;
+		this.password = password;
+	}
+	
+	
+	public ArrayList<StudentLogin> sampleStudents()
+	{
+		ArrayList<StudentLogin> sampleLog = new ArrayList<StudentLogin>();
+		sampleLog.add(new StudentLogin("lindan4", "12345678"));
+	}
+	
+	
+}

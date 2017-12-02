@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
 
 import javax.swing.*;
 
@@ -32,7 +33,11 @@ public class LoginScreen extends JFrame {
 	JTextField userNameField;
 	JPasswordField passwordField;
 	
+	
+	
 	public LoginScreen(){
+		
+		
 		
 		//Window initialization
 		super("Login Screen");
@@ -40,6 +45,7 @@ public class LoginScreen extends JFrame {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		
 		
 		//Component initialization
 		this.getContentPane().setLayout(null);
@@ -125,14 +131,69 @@ public class LoginScreen extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				statusBar.setText("Incorrect York credentials! Try again");
-				statusBar.setForeground(Color.RED);
 				
-			}
+				if (e.getSource() == login) 
+				{
+					ArrayList<StudentLogin> ls = sampleStudents();
+					
+					StudentLogin loginAttempt =  new StudentLogin(userNameField.getText(), passCharToString(passwordField.getPassword()));
+					
+					if (ifStudentExists(loginAttempt))
+					{
+						dispose();
+						MainForm mF = new MainForm(loginAttempt);
+					
+						mF.setVisible(true);
+					
+					}
+					else
+					{
+						//statusBar.setText("Incorrect York credentials! Try again");
+						statusBar.setText( userNameField.getText() + " " + passCharToString(passwordField.getPassword()));
+						statusBar.setForeground(Color.RED);
+					}
+				}	
 			
-		});
-
+			}});
 	}
 	
-
+	private String passCharToString(char[] a)
+	{
+		String s = "";
+		
+		for (int i = 0; i < a.length; i = i + 1)
+		{
+			s = s + a[i];
+		}
+		
+		return s;
+			
+	}
+	
+	private boolean ifStudentExists(StudentLogin mBal)
+	{
+		ArrayList<StudentLogin> failiure = sampleStudents();
+		
+		for (int i = 0; i < failiure.size(); i = i  + 1)
+		{
+			if (failiure.get(i).getUsername().equals(mBal.getUsername()) && failiure.get(i).getPassword().equals(mBal.getPassword()))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
+	private ArrayList<StudentLogin> sampleStudents()
+	{
+		ArrayList<StudentLogin> sampleLog = new ArrayList<StudentLogin>();
+		sampleLog.add(new StudentLogin("lindan4", "12345678"));
+		sampleLog.add(new StudentLogin("saads28", "12345678"));
+		
+		return sampleLog;
+	}
+	
 }
+		

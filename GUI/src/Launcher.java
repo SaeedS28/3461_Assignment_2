@@ -1,8 +1,8 @@
 
 public class Launcher {
 	public static void main(String[] args){
-		//LoginScreen screen = new LoginScreen();
-		//screen.setVisible(true);
+		LoginScreen screen = new LoginScreen();
+		screen.setVisible(true);
 		//CourseSelectForm course=new CourseSelectForm();
 		//course.setVisible(true);
 		//DegreeProgress dg=new DegreeProgress();
@@ -12,8 +12,8 @@ public class Launcher {
 		//AddTutorial tl=new AddTutorial();
 		//tl.setVisible(true);
 		
-		MainForm main = new MainForm();
-		main.setVisible(true);
+		//MainForm main = new MainForm();
+		//main.setVisible(true);
 		
 	}
 
