@@ -1,6 +1,7 @@
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -22,12 +23,16 @@ public class MainForm extends JFrame{
 	JButton addCourse;
 	
 	private StudentLogin loginAttempt;
+	private ArrayList<StudentInfo> sampleStudentInfo = StudentInfo.sampleStudentInfo();
+	private String currentTerm = "FW 2017-2018";
+	
+	
 	CompositeAdd[] test;
 	int count=0;
 	private static final long serialVersionUID = 1L;
 	
 
-	public MainForm(StudentLogin loginAttempt2) {
+	public MainForm(StudentLogin studentLoginInfo) {
 		//House Keeping
 				super("An overview");
 				this.setSize(800,785);
@@ -36,7 +41,7 @@ public class MainForm extends JFrame{
 				this.setLocationRelativeTo(null);
 				this.getContentPane().setLayout(null);
 				
-				this.loginAttempt = loginAttempt2;
+				this.loginAttempt = studentLoginInfo;
 				
 				Font font= new Font("Arial", Font.BOLD, 30);
 				Font font2= new Font("Arial", Font.BOLD, 20);
@@ -60,8 +65,12 @@ public class MainForm extends JFrame{
 				logoutPanel.add(logout);
 				
 				//Information Panel
-				personInformation=new JLabel("<html>This is complete <br/> bullshit "
-						+ "that will be over-written </html>");
+				
+				StudentInfo selectedUser = getStudent(studentLoginInfo);
+				
+				
+				personInformation=new JLabel("<html><p>Program: " + selectedUser.getStudentProgram() + "<br />" + "Current term: " + currentTerm + "<br />" + "Credits completed: " + selectedUser.getCompletedCredits() + "<br />" + "Credits remaining: " + selectedUser.getRemainingCredits() + "</p></html>");
+				
 				personInformation.setVisible(true);
 				personInformation.setFont(font2);
 				personInformationPanel=new JPanel();
@@ -83,7 +92,7 @@ public class MainForm extends JFrame{
 				addCourse.setFont(font2);
 				addCourse.setVisible(true);
 				addCoursePanel= new JPanel();
-				addCoursePanel.setLocation(450, 700);
+				addCoursePanel.setLocation(30, 50);
 				addCoursePanel.setSize(150, 50);
 				addCoursePanel.add(addCourse);
 				
@@ -110,10 +119,14 @@ public class MainForm extends JFrame{
 					public void actionPerformed(ActionEvent arg0) {
 						if(arg0.getSource()==addCourse) {
 							if(count<test.length) {
-								test[count].getRemoveButton().setVisible(true);
-								test[count].getExchangeButton().setVisible(true);
-								test[count].getCourseLabel().setVisible(true);
-								test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
+								
+								//test[count].getRemoveButton().setVisible(true);
+								//test[count].getExchangeButton().setVisible(true);
+								//test[count].getCourseLabel().setVisible(true);
+								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
+								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
+								CourseSelectForm fuck = new CourseSelectForm();
+								fuck.setVisible(true);
 								count++;
 							}
 							else {
@@ -123,6 +136,19 @@ public class MainForm extends JFrame{
 					}
 					
 				});
-	}	
+	}
+	
+	public StudentInfo getStudent(StudentLogin info)
+	{
+		for (StudentInfo si : sampleStudentInfo)
+		{
+			if (info.getUsername().equals(si.getUsername()) && info.getPassword().equals(si.getPassword()))
+			{
+				return si;
+			}
+		}
+		
+		return null;
+	}
 
 }

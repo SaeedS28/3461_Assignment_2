@@ -141,14 +141,15 @@ public class StudentInfo
 		this.remainingCredits = remainingCredits;
 	}
 	
-	public ArrayList<StudentInfo> sampleStudentInfo()
+	public static ArrayList<StudentInfo> sampleStudentInfo()
 	{
 		ArrayList<StudentInfo> sInfo = new ArrayList<StudentInfo>();
-		sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "Computer Science", 2017, "Lassonde School of Engineering", new ArrayList<Course>(), 90, 30));
+		sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", new ArrayList<Course>(), 90, 30));
 		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", new ArrayList<Course>(), 60, 60));
-		
 		
 		return sInfo;
 	}
+	
+	
 
 }
