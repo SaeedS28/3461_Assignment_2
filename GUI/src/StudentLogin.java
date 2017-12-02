@@ -22,8 +22,4 @@ public class StudentLogin
 		return this.password;
 	}
 	
-	
-	
-	
-	
 }

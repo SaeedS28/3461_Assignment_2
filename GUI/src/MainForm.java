@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -16,10 +18,12 @@ public class MainForm extends JFrame{
 	JLabel title;
 	JPanel personInformationPanel;
 	JLabel personInformation;
+	JPanel addCoursePanel;
+	JButton addCourse;
 	
 	private StudentLogin loginAttempt;
-	
-
+	CompositeAdd[] test;
+	int count=0;
 	private static final long serialVersionUID = 1L;
 	
 
@@ -42,7 +46,7 @@ public class MainForm extends JFrame{
 				title.setFont(font);
 				title.setVisible(true);
 				titlePanel = new JPanel();
-				titlePanel.setLocation(30, 40);
+				titlePanel.setLocation(30, 10);
 				titlePanel.setSize(150, 50);
 				titlePanel.add(title);
 				
@@ -61,7 +65,7 @@ public class MainForm extends JFrame{
 				personInformation.setVisible(true);
 				personInformation.setFont(font2);
 				personInformationPanel=new JPanel();
-				personInformationPanel.setLocation(30, 450);
+				personInformationPanel.setLocation(30, 500);
 				personInformationPanel.setSize(400, 250);
 				personInformationPanel.add(personInformation);
 				
@@ -74,14 +78,51 @@ public class MainForm extends JFrame{
 				degreeProgressPanel.setSize(200,50);
 				degreeProgressPanel.add(degreeProgress);
 				
+				//add courses components
+				addCourse = new JButton("Add Course");
+				addCourse.setFont(font2);
+				addCourse.setVisible(true);
+				addCoursePanel= new JPanel();
+				addCoursePanel.setLocation(450, 700);
+				addCoursePanel.setSize(150, 50);
+				addCoursePanel.add(addCourse);
+				
 				//Adding to the form
 				this.add(logoutPanel);
 				this.add(degreeProgressPanel);
 				this.add(personInformationPanel);
 				this.add(titlePanel);
-	}
+				this.add(addCoursePanel);
+				
+				test=new CompositeAdd[10];
+				for(int i=0;i<test.length;i++) {
+					test[i]=new CompositeAdd();
+				}
+				for(int i =0;i<test.length;i++) {
+					this.add(test[i].getAddPanel());
+					this.add(test[i].getExchangePanel());
+					this.add(test[i].getCourseDetailPanel());
+				}
+				
+				addCourse.addActionListener(new ActionListener() {
 
-	
-	
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						if(arg0.getSource()==addCourse) {
+							if(count<test.length) {
+								test[count].getRemoveButton().setVisible(true);
+								test[count].getExchangeButton().setVisible(true);
+								test[count].getCourseLabel().setVisible(true);
+								test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
+								count++;
+							}
+							else {
+								JOptionPane.showMessageDialog(null, "Too many courses!");
+							}
+						}
+					}
+					
+				});
+	}	
 
 }
