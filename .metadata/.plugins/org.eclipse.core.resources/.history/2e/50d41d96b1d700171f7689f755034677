@@ -1,0 +1,98 @@
+import java.util.*;
+
+
+public class Degree 
+{
+	private String degreeName;
+	private String degreeFaculty;
+	private String degreeType;
+	private int degreeDuration;
+	private int totalCredits;
+	private ArrayList<Course> degreeCourses;
+	
+	public Degree(String degreeName, String degreeFaculty, String degreeType, int degreeDuration, int totalCredits)
+	{
+		this.setDegreeName(degreeName);
+		this.setDegreeFaculty(degreeFaculty);
+		this.setDegreeType(degreeType);
+		this.setDegreeDuration(degreeDuration);
+		this.setTotalCredits(totalCredits);
+		this.setDegreeCourses(new ArrayList<Course>());
+	}
+	
+	public String getDegreeName()
+	{
+		return this.degreeName;
+	}
+	
+	public void setDegreeName(String degreeName)
+	{
+		this.degreeName = degreeName;
+	}
+	
+	public String getDegreeFaculty()
+	{
+		return this.degreeType;
+	}
+	
+	public void setDegreeFaculty(String degreeFaculty)
+	{
+		this.degreeFaculty = degreeFaculty;
+	}
+	
+	public String getDegreeType()
+	{
+		return this.degreeType;
+	}
+	
+	public void setDegreeType(String degreeType)
+	{
+		this.degreeType = degreeType;
+	}
+	
+	public int getDegreeDuration()
+	{
+		return this.degreeDuration;
+	}
+	
+	public void setDegreeDuration(int degreeDuration)
+	{
+		this.degreeDuration = degreeDuration;
+	}
+	
+	public int getTotalCredits()
+	{
+		return this.totalCredits;
+	}
+	
+	public void setTotalCredits(int totalCredits)
+	{
+		this.totalCredits = totalCredits;
+	}
+	
+	public ArrayList<Course> getDegreeCourses()
+	{
+		return this.degreeCourses;
+	}
+	
+	public void setDegreeCourses(ArrayList<Course> degreeCourses)
+	{
+		this.degreeCourses = degreeCourses;
+	}
+	
+	public static ArrayList<Degree> sampleDegreeList()
+	{
+		ArrayList<Degree> sampleList = new ArrayList<Degree>();
+		Degree cSci = new Degree("Computer Science", "Lassonde School of Engineering", "BSc", 4, 120);
+		
+		//EECS3461
+		ArrayList<GeneralCourse> uiPreq = new ArrayList<GeneralCourse>();
+		uiPreq.add(new GeneralCourse("EECS 1020: Java", 3));
+		uiPreq.add(new GeneralCourse("EECS 1030: Java 2", 3));
+		//uiPreq.add(new Course("EECS 2001: Automata Theory", "CDY4U1", "F Term", "This course teaches about automata theory.", "Lassonde School of Engineering", 3, null, 30, 30));
+		
+		
+		
+		//csDegree.add(new Course("EECS 3461: User Interfaces", "MD5161", "F Term", "This course teaches student how to implement interfaces.", "Lassonde School of Engineering", 3, uiPreq, 10, 30));
+	}
+}

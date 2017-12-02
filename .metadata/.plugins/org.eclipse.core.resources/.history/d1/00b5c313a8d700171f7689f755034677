@@ -1,0 +1,17 @@
+import java.util.*;
+
+
+public class Degree 
+{
+	private String degreeName;
+	private String degreeFaculty;
+	private int totalCredits;
+	private ArrayList<Courses> degreeCourses;
+	
+	public Degree(String degreeName, String degreeFaculty, int totalCredits, ArrayList<Course> degreeCourses)
+	{
+		
+	}
+	
+	
+}

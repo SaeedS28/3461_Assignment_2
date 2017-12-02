@@ -1,0 +1,8 @@
+import java.util.*;
+
+
+public class CompletedCourse 
+{
+	public CompletedCourse(String completedCourseName, String completedCourseTerm, int courseCredits)
+
+}

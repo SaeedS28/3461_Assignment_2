@@ -8,21 +8,24 @@ public class Course
 	private String courseTerm;
 	private String courseDescription;
 	private String courseFaculty;
-	private ArrayList<Course> coursePrequisites;
-	private ArrayList<StudentInfo> enrolledStudents;
-	private float markPrerequisite;
+	private int courseCreditCount;
+	private ArrayList<GeneralCourse> coursePrequisites;
+	private int enrolledStudents;
+	private int maxStudents;
 	
 	
-	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, ArrayList<Course> coursePrerequisites, ArrayList<StudentInfo> enrolledStudents, float markPrerequisite)
+	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, int courseCreditCount, ArrayList<GeneralCourse> coursePrerequisites, int enrolledStudents, int maxStudents)
 	{
 		this.setCourseName(courseName);
 		this.setCourseCode(courseCode);
 		this.setCourseTerm(courseTerm);
 		this.setCourseDescription(courseDescription);
 		this.setCourseFaculty(courseFaculty);
+		this.setCourseCreditCount(courseCreditCount);
 		this.setCoursePrerequisites(coursePrerequisites);
 		this.setEnrolledStudents(enrolledStudents);
-		this.setMarkPrerequisite(markPrerequisite);
+		this.setMaxStudents(maxStudents);
+		
 		
 	}
 	
@@ -76,33 +79,44 @@ public class Course
 		this.courseFaculty = courseFaculty;
 	}
 	
-	public ArrayList<Course> getCoursePrerequisites()
+	public ArrayList<GeneralCourse> getCoursePrerequisites()
 	{
 		return this.coursePrequisites;
 	}
 	
-	public void setCoursePrerequisites(ArrayList<Course> coursePrerequisites)
+	public void setCoursePrerequisites(ArrayList<GeneralCourse> coursePrerequisites)
 	{
 		this.coursePrequisites = coursePrerequisites;
 	}
 	
-	public ArrayList<StudentInfo> getEnrolledStudents()
+	public int getEnrolledStudents()
 	{
 		return this.enrolledStudents;
 	}
 	
-	public void setEnrolledStudents(ArrayList<StudentInfo> enrolledStudents)
+	public void setEnrolledStudents(int enrolledStudents)
 	{
 		this.enrolledStudents = enrolledStudents;
 	}
 	
-	public float getMarkPrerequisite()
+	public int getMaxStudents()
 	{
-		return this.markPrerequisite;
+		return this.maxStudents;
 	}
 	
-	public void setMarkPrerequisite(float markPrerequisite)
+	public void setMaxStudents(int maxStudents)
 	{
-		this.markPrerequisite = markPrerequisite;
+		this.maxStudents = maxStudents;
 	}
+	
+	public int getCourseCreditCount()
+	{
+		return this.courseCreditCount;
+	}
+	
+	public void setCourseCreditCount(int courseCreditCount)
+	{
+		this.courseCreditCount = courseCreditCount;
+	}
+	
 }
