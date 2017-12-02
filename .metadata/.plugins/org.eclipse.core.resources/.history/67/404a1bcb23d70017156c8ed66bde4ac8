@@ -1,0 +1,29 @@
+import java.awt.Font;
+
+import javax.swing.*;
+
+public class CompositeAdd {
+	
+	JPanel addPanel;
+	JPanel exchangePanel;
+	JPanel courseDetailsPanel;
+	JButton exchangeButton;
+	JButton addButton;
+	JLabel courseDetails;
+	
+	public CompositeAdd() {
+		Font font= new Font("Arial", Font.BOLD, 26);
+		Font font2= new Font("Arial", Font.BOLD, 20);
+		addPanel=new JPanel();
+		exchangePanel = new JPanel();
+		courseDetailsPanel =new JPanel();
+		exchangeButton = new JButton("+/-");
+		exchangeButton.setFont(font);
+		addButton = new JButton("+");
+		addButton.setFont(font);
+		courseDetails = new JLabel();
+		courseDetails.setFont(font);
+		
+	}
+	
+}

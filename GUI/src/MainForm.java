@@ -18,7 +18,7 @@ public class MainForm extends JFrame{
 	JLabel personInformation;
 	
 	private StudentLogin loginAttempt;
-	
+	CompositeAdd test;
 
 	private static final long serialVersionUID = 1L;
 	
@@ -79,6 +79,10 @@ public class MainForm extends JFrame{
 				this.add(degreeProgressPanel);
 				this.add(personInformationPanel);
 				this.add(titlePanel);
+				test=new CompositeAdd();
+				this.add(test.getAddPanel());
+				this.add(test.getExchangePanel());
+				this.add(test.getCourseDetailPanel());
 	}
 
 	
