@@ -188,8 +188,6 @@ public class Course extends GeneralCourse
 				"Students will learn more about algorithms.", "Jonathan Ostroff", 
 				new CourseSchedule("R S128", "M", "11:30 - 12:30"), anaAct, anaPreq);
 		
-		mockComCourses.add(ana);
-		
 		//EECS 3221
 		
 		ArrayList<GeneralCourse> opSysPreq = new ArrayList<GeneralCourse>();
@@ -201,8 +199,6 @@ public class Course extends GeneralCourse
 				"Students will learn more about operating systems.", "Jia Xu", 
 				new CourseSchedule("R S128", "M", "12:30 - 13:30"), null, opSysPreq);
 		
-		mockComCourses.add(opSys);
-		
 		//EECS 3421
 		ArrayList<GeneralCourse> databasePreq = new ArrayList<GeneralCourse>();
 		ethicsPreq.add(new GeneralCourse("EECS 2030: Java", 3));
@@ -212,8 +208,6 @@ public class Course extends GeneralCourse
 				"Students will learn about databases.", "Jarek Gryz", 
 				new CourseSchedule("CLH L", "R", "13:30 - 14:30"), null, databasePreq);
 		
-		mockComCourses.add(database);
-		
 		//EECS 3461
 		
 		ArrayList<GeneralCourse> uiPreq = new ArrayList<GeneralCourse>();
@@ -221,10 +215,8 @@ public class Course extends GeneralCourse
 		
 		
 		Course ui = new Course("EECS 3461: User Interfaces", 3, "W Term", 
-				"Students will hopefully learn about user interfaces.", "Melanie Baljko", 
+				"Students will learn about databases.", "Jarek Gryz", 
 				new CourseSchedule("CLH L", "R", "14:30 - 15:30"), null, uiPreq);
-		
-		mockComCourses.add(ui);
 		
 		//ArrayList
 		

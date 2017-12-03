@@ -221,10 +221,10 @@ public class Course extends GeneralCourse
 		
 		
 		Course ui = new Course("EECS 3461: User Interfaces", 3, "W Term", 
-				"Students will hopefully learn about user interfaces.", "Melanie Baljko", 
+				"Students will learn about databases.", "Jarek Gryz", 
 				new CourseSchedule("CLH L", "R", "14:30 - 15:30"), null, uiPreq);
 		
-		mockComCourses.add(ui);
+		mockComCourses.add(uiPreq);
 		
 		//ArrayList
 		
