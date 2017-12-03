@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="StudentInfo"/>
 </qualifiedTypeNameHistroy>
-=======
-<qualifiedTypeNameHistroy/>
->>>>>>> 7e4e859d2729fb16d3ba0effe7bc8b3e2a5c1894
