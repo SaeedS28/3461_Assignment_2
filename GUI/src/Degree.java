@@ -91,7 +91,7 @@ public class Degree
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 1001: Research in Computer Science", 1));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2030: Java", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2011: Data Structures", 3));
-		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2021: Computer Organization", 3));
+		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2021: Computer Organization", 4));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2031: Software Tools", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2001: Theory of Computation", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));

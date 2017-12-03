@@ -2,4 +2,8 @@
 <<<<<<<=HEAD
 >>>>>>>=73a78176f40d0daab4051c17dee523d028f4f1e5
 eclipse.preferences.version=1
+<<<<<<< HEAD
 org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1512333411019" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1512275196354" name\="jre1.8.0_152" path\="/eecs/home/saeeds28/3461_Assignment_2/C\:\\Program Files\\Java\\jre1.8.0_152"/>\n<vm id\="1512333411019" javadocURL\="https\://docs.oracle.com/javase/8/docs/api/" name\="jdk-1.8.0_144" path\="/pkgcache/jdk-1.8.0_144"/>\n</vmType>\n</vmSettings>\n
+=======
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1512333859904" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1512333859904" name\="jdk-1.8.0_144" path\="/pkgcache/jdk-1.8.0_144"/>\n</vmType>\n</vmSettings>\n
+>>>>>>> 2e9ce68fd59b9299d1c0efc8ec56e978062525db

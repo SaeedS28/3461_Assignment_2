@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 org.eclipse.rse.preferences.order.connections=ea72.Local
+=======
+org.eclipse.rse.preferences.order.connections=ea73.Local
+>>>>>>> 2e9ce68fd59b9299d1c0efc8ec56e978062525db
