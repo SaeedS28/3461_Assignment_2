@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+
+
+public class Course extends GeneralCourse
+{
+	private String courseTerm;
+	private String courseDesc;
+	
+	
+	public Course(String courseName, int courseCredits, String courseTerm, String courseDesc, ArrayList<String> daysOffered, String courseInstructor)
+	{
+		super(courseName, courseCredits);
+		this.setCourseTerm(courseTerm);
+		this.setCourseDesc(courseDesc);
+	}
+	
+	public String getCourseTerm()
+	{
+		return this.courseTerm;
+	}
+	
+	public void setCourseTerm(String courseTerm)
+	{
+		this.courseTerm = courseTerm;
+	}
+	
+	public String getCourseDesc()
+	{
+		return this.courseDesc;
+	}
+	
+	public void setCourseDesc(String courseDesc)
+	{
+		this.courseDesc = courseDesc;
+	}
+}

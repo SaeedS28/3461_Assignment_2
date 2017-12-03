@@ -1,52 +1,23 @@
 import java.util.ArrayList;
 
 
-public class Course 
+public class Course extends GeneralCourse
 {
-	private String courseName;
-	private String courseCode;
 	private String courseTerm;
-	private String courseDescription;
-	private String courseFaculty;
-	private int courseCreditCount;
-	private ArrayList<GeneralCourse> coursePrequisites;
-	private int enrolledStudents;
-	private int maxStudents;
+	private String courseDesc;
+	private String courseInstructor;
+	private ArrayList<CourseSchedule> courseSchedule;
+
 	
 	
-	public Course(String courseName, String courseCode, String courseTerm, String courseDescription, String courseFaculty, int courseCreditCount, ArrayList<GeneralCourse> coursePrerequisites, int enrolledStudents, int maxStudents)
+	
+	public Course(String courseName, int courseCredits, String courseTerm, String courseDesc, String courseInstructor, ArrayList<CourseSchedule> courseSchedule)
 	{
-		this.setCourseName(courseName);
-		this.setCourseCode(courseCode);
+		super(courseName, courseCredits);
 		this.setCourseTerm(courseTerm);
-		this.setCourseDescription(courseDescription);
-		this.setCourseFaculty(courseFaculty);
-		this.setCourseCreditCount(courseCreditCount);
-		this.setCoursePrerequisites(coursePrerequisites);
-		this.setEnrolledStudents(enrolledStudents);
-		this.setMaxStudents(maxStudents);
-		
-		
-	}
-	
-	public String getCourseName()
-	{
-		return this.courseName;
-	}
-	
-	public void setCourseName(String courseName)
-	{
-		this.courseName = courseName;
-	}
-	
-	public String getCourseCode()
-	{
-		return this.courseCode;
-	}
-	
-	public void setCourseCode(String courseCode)
-	{
-		this.courseCode = courseCode;
+		this.setCourseDesc(courseDesc);
+		this.setCourseInstructor(courseInstructor);
+		this.setCourseSchedule(courseSchedule);
 	}
 	
 	public String getCourseTerm()
@@ -59,64 +30,34 @@ public class Course
 		this.courseTerm = courseTerm;
 	}
 	
-	public String getCourseDescription()
+	public String getCourseDesc()
 	{
-		return this.courseDescription;
+		return this.courseDesc;
 	}
 	
-	public void setCourseDescription(String courseDescription)
+	public void setCourseDesc(String courseDesc)
 	{
-		this.courseDescription = courseDescription;
+		this.courseDesc = courseDesc;
 	}
 	
-	public String getCourseFaculty()
+	
+	public String getCourseInstructor()
 	{
-		return this.courseFaculty;
+		return this.courseInstructor;
 	}
 	
-	public void setCourseFaculty(String courseFaculty)
+	public void setCourseInstructor(String courseInstructor)
 	{
-		this.courseFaculty = courseFaculty;
+		this.courseInstructor = courseInstructor;
 	}
 	
-	public ArrayList<GeneralCourse> getCoursePrerequisites()
+	public ArrayList<CourseSchedule> getCourseSchedule()
 	{
-		return this.coursePrequisites;
+		return this.courseSchedule;
 	}
 	
-	public void setCoursePrerequisites(ArrayList<GeneralCourse> coursePrerequisites)
+	public void setCourseSchedule(ArrayList<CourseSchedule> courseSchedule)
 	{
-		this.coursePrequisites = coursePrerequisites;
+		this.courseSchedule = courseSchedule;
 	}
-	
-	public int getEnrolledStudents()
-	{
-		return this.enrolledStudents;
-	}
-	
-	public void setEnrolledStudents(int enrolledStudents)
-	{
-		this.enrolledStudents = enrolledStudents;
-	}
-	
-	public int getMaxStudents()
-	{
-		return this.maxStudents;
-	}
-	
-	public void setMaxStudents(int maxStudents)
-	{
-		this.maxStudents = maxStudents;
-	}
-	
-	public int getCourseCreditCount()
-	{
-		return this.courseCreditCount;
-	}
-	
-	public void setCourseCreditCount(int courseCreditCount)
-	{
-		this.courseCreditCount = courseCreditCount;
-	}
-	
 }

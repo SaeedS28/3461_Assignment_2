@@ -1,0 +1,12 @@
+
+public class CourseSchedule 
+{
+	private String courseLocation;
+	private String daysOffered;
+	
+	public CoursesSchedule(String courseLocation, String daysOffered, )
+	{
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+
+public abstract class CourseActivity 
+{
+	
+	private String activityInstructor;
+	private String timeFrame;
+	
+	public CourseActivity(String activityInstructor, String timeFrame)
+	{
+		
+	}
+
+}

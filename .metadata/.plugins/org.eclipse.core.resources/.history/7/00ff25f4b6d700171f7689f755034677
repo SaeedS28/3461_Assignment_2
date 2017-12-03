@@ -1,0 +1,11 @@
+import java.util.ArrayList;
+
+
+public class Course extends GeneralCourse
+{
+	public Course(String courseName, int courseCredits)
+	{
+		super(courseName, courseCredits);
+	}
+	
+}

@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+
+public class Course extends GeneralCourse
+{
+	private String courseDesc;
+	
+	public Course(String courseName, int courseCredits, String courseDesc)
+	{
+		super(courseName, courseCredits);
+	}
+	
+	public String getCourseDesc()
+	{
+		return this.courseDesc;
+	}
+	
+	
+}
