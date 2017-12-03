@@ -97,14 +97,82 @@ public class Course extends GeneralCourse
 		
 		//EECS 1022
 		
-		ArrayList<CourseActivity> introToCompSciTwoAct = new ArrayList<CourseActivity>();
-		CourseLab introToCompSciTwoLab = new CourseLab("Lind Thill", "T", "2:30 - 4:00");
+		//Activities
 		
+		
+		CourseLab introToCompSciTwoLab = new CourseLab("Lind Thill", "T", "2:30 - 4:00");
+		CourseLab Act2030= new CourseLab("B. Korobkin", "W", "2:30 - 4:00");
+		CourseLab lab2011= new CourseLab("Brianna Banks", "F", "09:30 - 10:30");
+		CourseLab lab2021= new CourseLab("Johnny Sins", "W", "13:30 - 15:00");
+		CourseLab lab2031= new CourseLab("Ron Jeremy", "F", "18:30 - 20:00");
+		CourseTutorial tutorial2001 = new CourseTutorial("Olivia Austin", "H", "10:30 - 12:00");
+		
+		ArrayList<CourseActivity> introToCompSciTwoAct = new ArrayList<CourseActivity>();
+		ArrayList<CourseActivity> activity2001 = new ArrayList<CourseActivity>();
+		ArrayList<CourseActivity> activity2011 = new ArrayList<CourseActivity>();
+		ArrayList<CourseActivity> activity2030 = new ArrayList<CourseActivity>();
+		ArrayList<CourseActivity> activity2021 = new ArrayList<CourseActivity>();
+		ArrayList<CourseActivity> activity2031 = new ArrayList<CourseActivity>();
+		
+		activity2011.add(lab2011);
+		activity2021.add(lab2021);
+		activity2030.add(Act2030);
+		activity2031.add(lab2031);
+		activity2001.add(tutorial2001);
+		
+		//Prereqs
+		ArrayList<GeneralCourse> prereqs2030 = new ArrayList<GeneralCourse>();
+		ArrayList<GeneralCourse> prereqs2001 = new ArrayList<GeneralCourse>();
+		ArrayList<GeneralCourse> prereqs2021 = new ArrayList<GeneralCourse>();
+		ArrayList<GeneralCourse> prereqs2031 = new ArrayList<GeneralCourse>();
+		ArrayList<GeneralCourse> prereqs2011 = new ArrayList<GeneralCourse>();
+		
+		prereqs2011.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		prereqs2011.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		prereqs2011.add(new GeneralCourse("EECS 2030: Java", 3));
+		
+		prereqs2030.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		prereqs2030.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		
+		prereqs2001.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		prereqs2001.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		prereqs2001.add(new GeneralCourse("MATH 1019: Discrete Mathematics", 3));
+		
+		prereqs2021.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		prereqs2021.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		
+		prereqs2031.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		prereqs2031.add(new GeneralCourse("EECS 2030: Java", 3));
+		prereqs2031.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		
+		//LINDAN's Course
 		ArrayList<GeneralCourse> intoToCompScoTwoCoursePre = new ArrayList<GeneralCourse>();
 		introToCompSciTwoAct.add(introToCompSciTwoLab);
 		Course introCompSciTwo = new Course("EECS 1022: Introduction to Computer Science 2", 3, "W Term", 
 				"Students will further their knowledge through web programming.", "Melanie Baljko", 
 				new CourseSchedule("CLH L", "M", "18:00 - 20:00"), introToCompSciTwoAct, null);
+		
+		//Saad's Courses
+		Course java2 = new Course("EECS 2030: Java", 3, "W Term", 
+				"This course introduces students to the Java language", "Jackie Wang", 
+				new CourseSchedule("LSB 105", "R", "18:00 - 19:30"), activity2030, prereqs2030);
+		
+		Course dataStructures = new Course("EECS 2011: Data Structures", 3, "F Term", 
+				"This course introduces students to some of the most common data structures", "Tyler Noble", 
+				new CourseSchedule("LAS B", "S", "09:00 - 10:30"), activity2011, prereqs2011);
+		
+		Course compOrg = new Course("EECS 2021: Computer Organization", 4, "F Term", 
+				"This course introduces students to basic concepts of computer hardware", "Vivian Octave", 
+				new CourseSchedule("LAS B", "F", "16:30-18:00"),activity2021, prereqs2021);
+		
+		Course softDesign = new Course("EECS 2031: Software Tools", 3, "W Term", 
+				"This course introduces students to C programming Language and shell scripting", "Nikki Benz", 
+				new CourseSchedule("CB 115", "W", "10:30-12:00"),activity2031, prereqs2031);
+		
+		Course theoryOfComp = new Course("EECS 2001: Inroduction to the theory of computing", 3, "W Term", 
+				"This course introduces students to depression and suicide and how to deal with a low GPA", "Stella Cox", 
+				new CourseSchedule("SLH F", "S", "14:00-15:30"),activity2001, prereqs2001);
+		
 		
 		//EECS 1001
 		//Course
