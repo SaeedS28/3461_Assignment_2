@@ -163,10 +163,14 @@ public class StudentInfo
 		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 2030: Elementary Probability", 3));
 		
 		
+		//Lindan's completed courses
+		
+		ArrayList<GeneralCourse> lindanCompletedCoursesGerman = new ArrayList<GeneralCourse>();
+		lindanCompletedCoursesGerman.add(new GeneralCourse("GER 1000: Elementary German", 6));
+		lindanCompletedCoursesGerman.add(new GeneralCourse("GER 2000: Intermediate German", 6));
 		
 		
-		
-		//sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", lindanCompletedCoursesGerman, 90, 30));
+		sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", lindanCompletedCoursesGerman, 90, 30));
 		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", saadCompletedCoursesComSci, 60, 60));
 		
 		
