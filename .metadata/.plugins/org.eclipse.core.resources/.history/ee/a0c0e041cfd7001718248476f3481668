@@ -10,18 +10,18 @@ public class GeneralCourse
 	
 	public GeneralCourse(String generalCourseName, int courseCredits)
 	{
-		this.setGeneralCourseName(generalCourseName);
+		this.setCompletedCourseName(generalCourseName);
 		this.setCourseCredits(courseCredits);
 	}
 	
-	public String getGeneralCourseName()
+	public String getCompletedCourseName()
 	{
 		return this.generalCourseName;
 	}
 	
-	public void setGeneralCourseName(String generalCourseName)
+	public void setCompletedCourseName(String completedCourseName)
 	{
-		this.generalCourseName = generalCourseName;
+		this.generalCourseName = completedCourseName;
 	}
 	
 	

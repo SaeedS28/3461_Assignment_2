@@ -25,14 +25,12 @@ public class CourseSelectForm extends JFrame {
 	JPanel cancelPanel;
 	JButton cancel;
 	String [] dummyData= {"1","2","3","4","5","6"};
-	StudentInfo studentInfo;
+	
 	
 	@SuppressWarnings("rawtypes")
-	
-	public CourseSelectForm(StudentInfo studentInfo) 
-	{
+	public CourseSelectForm(StudentInfo studentInfo) {
 		super("Select Lab/Tutorial");
-		this.studentInfo=studentInfo;
+		
 		this.setSize(675,500);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -54,8 +52,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(this.generateSuggestions().toArray());
-		
+		courseOption = new JList(dummyData);
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
 		courseOption.setVisibleRowCount(4);
@@ -111,14 +108,11 @@ public class CourseSelectForm extends JFrame {
 		this.add(cancelPanel);
 	}
 	
-	public ArrayList<GeneralCourse> generateSuggestions()
+	public ArrayList<Course> generateSuggestions()
 	{
-		//ArrayList<Course> listOfCourses = new ArrayList<Course>();
+		ArrayList<Course> listOfCourses = new ArrayList<Course>();
 		
-		//ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
-		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
 		
-		return degreeCourses;
 		
 	}
 }

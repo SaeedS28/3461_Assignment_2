@@ -54,8 +54,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(this.generateSuggestions().toArray());
-		
+		courseOption = new JList(dummyData);
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
 		courseOption.setVisibleRowCount(4);
@@ -115,9 +114,8 @@ public class CourseSelectForm extends JFrame {
 	{
 		//ArrayList<Course> listOfCourses = new ArrayList<Course>();
 		
-		//ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
+		ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
 		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
-		
 		return degreeCourses;
 		
 	}
