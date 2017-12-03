@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class CourseSuggestions 
+{
+	
+	private ArrayList<Course> courses;
+	
+	public CourseSuggestions(ArrayList<Course> courses)
+	{
+		this.setCourses(courses);
+	}
+	
+	public ArrayList<Course> getCourses()
+	{
+		return this.courses;
+	}
+	
+	public void setCourses(ArrayList<Course> courses)
+	{
+		this.courses = courses;
+	}
+	
+	public A
+
+}

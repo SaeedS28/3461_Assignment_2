@@ -84,7 +84,7 @@ public class Course extends GeneralCourse
 		this.prereq = prereq;
 	}
 	
-	private static ArrayList<Course> generateComSciCourses()
+	public static ArrayList<Course> generateComSciCourses()
 	{
 		ArrayList<Course> mockComCourses = new ArrayList<Course>();
 		

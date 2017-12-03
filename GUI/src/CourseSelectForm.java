@@ -56,7 +56,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(this.generateSuggestions());
+		courseOption = new JList((this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList())).toArray()));
 		
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
@@ -128,6 +128,8 @@ public class CourseSelectForm extends JFrame {
 	public String[] generateSuggestions()
 	{
 		//ArrayList<Course> listOfCourses = new ArrayList<Course>();
+		ArrayList<Course> comSciCourses = Course.generateComSciCourses();
+		ArrayList<GeneralCourse> saadCourses = StudentInfo.sampleStudentInfo().get(0).getFinishedCoursesList();
 		
 		//ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
 		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
@@ -139,4 +141,54 @@ public class CourseSelectForm extends JFrame {
 		return array;
 		
 	}
+	
+	
+	private ArrayList<Course> courseDiff(ArrayList<Course> courses, ArrayList<GeneralCourse> generalCourses)
+	{
+		ArrayList<Course> untakenCourses = new ArrayList<Course>();
+		
+		boolean courseExists = false;
+		//Iterate over Saad's courses
+		
+		for (int i = 0; i < courses.size(); i = i + 1)
+		{
+			for (int j = 0; j < generalCourses.size(); j = j + 1)
+			{
+				if (generalCourses.get(j).getGeneralCourseName().equals(courses.get(i).getGeneralCourseName()))
+				{
+					courseExists = true;
+				}
+			}
+			
+			if (courseExists)
+			{
+				
+				courseExists = false;
+			}
+			else
+			{
+				untakenCourses.add(courses.get(i));
+				
+			}
+			
+		}
+		
+		return untakenCourses;
+	}
+	
+	
+	private ArrayList<CourseSuggestionOption> generateOptions(ArrayList<Course> courses)
+	{
+		ArrayList<CourseSuggestionOption> scheisse = new ArrayList<CourseSuggestionOption>();
+		for (Course cs: courses)
+		{
+			scheisse.add(new CourseSuggestionOption(cs));
+		}
+		
+		return scheisse;
+		
+		
+	}
+	
+
 }

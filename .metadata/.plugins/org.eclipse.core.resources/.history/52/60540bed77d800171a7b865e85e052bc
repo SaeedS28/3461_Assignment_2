@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class CourseSuggestionOption 
+{
+	
+	private Course course;
+	
+	public CourseSuggestionOption(Course course)
+	{
+		this.setCourses(course);
+	}
+	
+	public Course getCourse()
+	{
+		return this.course;
+	}
+	
+	public void setCourse(Course course)
+	{
+		this.course = course;
+	}
+	
+
+
+}
