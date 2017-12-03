@@ -140,7 +140,7 @@ public class LoginScreen extends JFrame {
 					if (ifStudentExists(loginAttempt))
 					{
 						dispose();
-						MainForm mF = new MainForm(loginAttempt, null);
+						MainForm mF = new MainForm(loginAttempt);
 					
 						mF.setVisible(true);
 					

@@ -150,9 +150,6 @@ public class MainForm extends JFrame{
 								//test[count].getCourseLabel().setVisible(true);
 								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
 								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
-								
-									JOptionPane.showMessageDialog(null, "Go fuck yourself!");
-								
 								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf);
 								fu.setVisible(true);
 								count++;

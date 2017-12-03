@@ -30,12 +30,12 @@ public class CourseSelectForm extends JFrame {
 	JButton cancel;
 	String [] dummyData= {"1","2","3","4","5","6"};
 	StudentInfo studentInfo;
-	MainForm localMf;
+	
 	private ArrayList<CourseSuggestionOption> studentOptions;
 	
 	@SuppressWarnings("rawtypes")
 	
-	public CourseSelectForm(StudentInfo studentInfo, MainForm mf) 
+	public CourseSelectForm(StudentInfo studentInfo) 
 	{
 		super("Select Course");
 		this.studentInfo=studentInfo;
@@ -43,7 +43,7 @@ public class CourseSelectForm extends JFrame {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.localMf=mf;
+		
 		//Component initialization
 		this.getContentPane().setLayout(null);
 		
@@ -144,13 +144,11 @@ public class CourseSelectForm extends JFrame {
 					
 					if (response == JOptionPane.YES_OPTION)
 					{
-						Course selectedCourse = getSelectedCourse(studentOptions.get(courseOption.getSelectedIndex()).getCourse().getGeneralCourseName());
+						Course selectedCourse = getSelectedCourse(studentOptions.get(courseOption.getSelectedIndex()).toString());
 						
 						if (selectedCourse.getCourseActivity() == null)
 						{
-						//	mf.test[1].courseDetails.setText(selectedCourse.getCourseDesc());
-							System.out.println("rape me, daddy!");
-							dispose();
+							
 						}
 						else
 						{

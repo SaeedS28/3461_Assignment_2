@@ -144,12 +144,11 @@ public class CourseSelectForm extends JFrame {
 					
 					if (response == JOptionPane.YES_OPTION)
 					{
-						Course selectedCourse = getSelectedCourse(studentOptions.get(courseOption.getSelectedIndex()).getCourse().getGeneralCourseName());
+						Course selectedCourse = getSelectedCourse(studentOptions.get(courseOption.getSelectedIndex()).toString());
 						
 						if (selectedCourse.getCourseActivity() == null)
 						{
-						//	mf.test[1].courseDetails.setText(selectedCourse.getCourseDesc());
-							System.out.println("rape me, daddy!");
+							mf.test[1].courseDetails.setText(selectedCourse.getCourseDesc());
 							dispose();
 						}
 						else

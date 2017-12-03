@@ -25,14 +25,14 @@ public class MainForm extends JFrame{
 	private StudentLogin loginAttempt;
 	private ArrayList<StudentInfo> sampleStudentInfo = StudentInfo.sampleStudentInfo();
 	private String currentTerm = "FW 2017-2018";
-	MainForm mf;
+	
 	
 	CompositeAdd[] test;
 	int count=0;
 	private static final long serialVersionUID = 1L;
 	
 
-	public MainForm(StudentLogin studentLoginInfo, ArrayList<Course> enrolledCourses) {
+	public MainForm(StudentLogin studentLoginInfo) {
 		//House Keeping
 				super("An overview");
 				this.setSize(800,785);
@@ -40,7 +40,7 @@ public class MainForm extends JFrame{
 				this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 				this.setLocationRelativeTo(null);
 				this.getContentPane().setLayout(null);
-				mf=this;
+				
 				this.loginAttempt = studentLoginInfo;
 				
 				Font font= new Font("Arial", Font.BOLD, 30);
@@ -150,10 +150,7 @@ public class MainForm extends JFrame{
 								//test[count].getCourseLabel().setVisible(true);
 								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
 								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
-								
-									JOptionPane.showMessageDialog(null, "Go fuck yourself!");
-								
-								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf);
+								CourseSelectForm fu = new CourseSelectForm(selectedUser);
 								fu.setVisible(true);
 								count++;
 							}
