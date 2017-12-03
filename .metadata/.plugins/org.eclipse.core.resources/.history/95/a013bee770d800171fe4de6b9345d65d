@@ -257,7 +257,7 @@ public class Course extends GeneralCourse
 		cSci.getDegreeCourses().add(new GeneralCourse("MATH 2030: Elementary Probability", 3));
 		*/
 		
-		return mockComCourses;
+		return null;
 	}
 	
 	
