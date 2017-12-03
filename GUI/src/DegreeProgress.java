@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 public class DegreeProgress extends JFrame {
@@ -50,8 +52,8 @@ public class DegreeProgress extends JFrame {
 		courseOption.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scroller=new JScrollPane(courseOption);
 		listPanel = new JPanel();
-		listPanel.setLocation(175,130);
-		listPanel.setSize(75,225);
+		listPanel.setLocation(50,120);
+		listPanel.setSize(600,230);
 		listPanel.add(scroller);
 		
 		//Cancel button components
@@ -67,5 +69,16 @@ public class DegreeProgress extends JFrame {
 		this.add(titlePanel);
 		this.add(listPanel);
 		this.add(backPanel);
+		
+		back.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(arg0.getSource()==back) {
+					dispose();
+				}
+			}
+			
+		});
 	}
 }
