@@ -23,7 +23,6 @@ public class MainForm extends JFrame{
 	JButton addCourse;
 	
 	private StudentLogin loginAttempt;
-	private ArrayList<StudentInfo> sampleStudentInfo = StudentInfo.sampleStudentInfo();
 	private String currentTerm = "FW 2017-2018";
 	
 	
@@ -69,7 +68,7 @@ public class MainForm extends JFrame{
 				StudentInfo selectedUser = getStudent(studentLoginInfo);
 				
 				
-				personInformation=new JLabel("<html><p>Program: " + selectedUser.getStudentDegree().getDegreeName() + " (" + selectedUser.getStudentDegree().getDegreeType() + ") " + "<br />" + "Current term: " + currentTerm + "<br />" + "Credits completed: " + selectedUser.getCompletedCredits() + "<br />" + "Credits remaining: " + selectedUser.getRemainingCredits() + "</p></html>");
+				personInformation=new JLabel("<html><p>Program: " + selectedUser.getStudentProgram() + "<br />" + "Current term: " + currentTerm + "<br />" + "Credits completed: " + selectedUser.getCompletedCredits() + "<br />" + "Credits remaining: " + selectedUser.getRemainingCredits() + "</p></html>");
 				
 				personInformation.setVisible(true);
 				personInformation.setFont(font2);

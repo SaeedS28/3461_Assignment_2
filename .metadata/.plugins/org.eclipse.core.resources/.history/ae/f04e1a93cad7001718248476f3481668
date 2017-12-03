@@ -8,8 +8,9 @@ public class StudentInfo
 	private String firstName;
 	private String lastName;
 	private int studentNo;
+	private String studentProgram;
 	private int studentYear;
-	private Degree studentDegree;
+	private String studentFaculty;
 	private ArrayList<GeneralCourse> finishedCourses;
 	private int completedCredits;
 	private int remainingCredits;
@@ -21,8 +22,9 @@ public class StudentInfo
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setStudentNo(studentNo);
+		this.setStudentProgram(studentProgram);
 		this.setStudentYear(studentYear);
-		this.setStudentDegree(studentDegree);
+		this.setStudentFaculty(studentFaculty);
 		this.setFinishedCoursesList(finishedCourses);
 		this.setCompletedCredits(completedCredits);
 		this.setRemainingCredits(remainingCredits);
@@ -89,16 +91,6 @@ public class StudentInfo
 		this.studentYear = studentYear;
 	}
 	
-	public Degree getStudentDegree()
-	{
-		return this.studentDegree;
-	}
-	
-	public void setStudentDegree(Degree studentDegree)
-	{
-		this.studentDegree = studentDegree;
-	}
-	
 	
 	public ArrayList<GeneralCourse> getFinishedCoursesList()
 	{
@@ -154,7 +146,7 @@ public class StudentInfo
 		
 		
 		//sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", lindanCompletedCoursesGerman, 90, 30));
-		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, 2017, Degree.sampleDegreeList().get(0), saadCompletedCoursesComSci, 60, 60));
+		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", saadCompletedCoursesComSci, 60, 60));
 		
 		
 		

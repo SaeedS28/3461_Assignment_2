@@ -134,6 +134,7 @@ public class LoginScreen extends JFrame {
 				
 				if (e.getSource() == login) 
 				{
+					ArrayList<StudentLogin> ls = sampleStudents();
 					
 					StudentLogin loginAttempt =  new StudentLogin(userNameField.getText(), passCharToString(passwordField.getPassword()));
 					
@@ -188,8 +189,8 @@ public class LoginScreen extends JFrame {
 	private ArrayList<StudentLogin> sampleStudents()
 	{
 		ArrayList<StudentLogin> sampleLog = new ArrayList<StudentLogin>();
-		//sampleLog.add(new StudentLogin("lindan4", "12345678"));
-		sampleLog.add(new StudentLogin("saeeds28", "12345678"));
+		sampleLog.add(new StudentLogin("lindan4", "12345678"));
+		sampleLog.add(new StudentLogin("saads28", "12345678"));
 		
 		return sampleLog;
 	}

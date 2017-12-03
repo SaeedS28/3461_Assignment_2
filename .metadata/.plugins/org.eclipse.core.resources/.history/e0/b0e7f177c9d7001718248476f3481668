@@ -8,21 +8,24 @@ public class StudentInfo
 	private String firstName;
 	private String lastName;
 	private int studentNo;
+	private String studentProgram;
 	private int studentYear;
-	private Degree studentDegree;
+	private String studentFaculty;
 	private ArrayList<GeneralCourse> finishedCourses;
 	private int completedCredits;
 	private int remainingCredits;
 	
-	public StudentInfo(String userName, String password, String firstName, String lastName, int studentNo,  int studentYear, Degree studentDegree, ArrayList<GeneralCourse> finishedCourses, int completedCredits, int remainingCredits)
+	public StudentInfo(String userName, String password, String firstName, String lastName, int studentNo, String studentProgram, int 
+			studentYear, String studentFaculty, ArrayList<GeneralCourse> finishedCourses, int completedCredits, int remainingCredits)
 	{
 		this.setUsername(userName);
 		this.setPassword(password);
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setStudentNo(studentNo);
+		this.setStudentProgram(studentProgram);
 		this.setStudentYear(studentYear);
-		this.setStudentDegree(studentDegree);
+		this.setStudentFaculty(studentFaculty);
 		this.setFinishedCoursesList(finishedCourses);
 		this.setCompletedCredits(completedCredits);
 		this.setRemainingCredits(remainingCredits);
@@ -78,6 +81,15 @@ public class StudentInfo
 		this.studentNo = studentNo;
 	}
 	
+	public String getStudentProgram()
+	{
+		return this.studentProgram;
+	}
+	
+	public void setStudentProgram(String studentProgram)
+	{
+		this.studentProgram = studentProgram;
+	}
 	
 	public int getStudentYear()
 	{
@@ -89,16 +101,15 @@ public class StudentInfo
 		this.studentYear = studentYear;
 	}
 	
-	public Degree getStudentDegree()
+	public String getStudentFaculty()
 	{
-		return this.studentDegree;
+		return this.studentFaculty;
 	}
 	
-	public void setStudentDegree(Degree studentDegree)
+	public void setStudentFaculty(String studentFaculty)
 	{
-		this.studentDegree = studentDegree;
+		this.studentFaculty = studentFaculty;
 	}
-	
 	
 	public ArrayList<GeneralCourse> getFinishedCoursesList()
 	{
@@ -130,9 +141,9 @@ public class StudentInfo
 		this.remainingCredits = remainingCredits;
 	}
 	
-	public static ArrayList<StudentInfo> sampleStudentInfo()
+	public static StudentInfo sampleStudentInfo()
 	{
-		ArrayList<StudentInfo> sInfo = new ArrayList<StudentInfo>();
+  
 		
 		//Saad's completed courses
 		ArrayList<GeneralCourse> saadCompletedCoursesComSci = new ArrayList<GeneralCourse>();
@@ -151,14 +162,11 @@ public class StudentInfo
 		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 1090: Introduction to Logic", 3));
 		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 2030: Elementary Probability", 3));
 		
-		
-		
 		//sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", lindanCompletedCoursesGerman, 90, 30));
-		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, 2017, Degree.sampleDegreeList().get(0), saadCompletedCoursesComSci, 60, 60));
+		StudentInfo saad = new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", saadCompletedCoursesComSci, 60, 60);
 		
 		
-		
-		return sInfo;
+		return saad;
 	}
 	
 	
