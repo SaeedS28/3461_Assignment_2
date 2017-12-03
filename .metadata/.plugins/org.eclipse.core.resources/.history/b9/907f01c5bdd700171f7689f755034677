@@ -19,7 +19,6 @@ public class Course extends GeneralCourse
 		this.setCourseDesc(courseDesc);
 		this.setCourseInstructor(courseInstructor);
 		this.setCourseSchedule(courseSchedule);
-		this.setCourseActivity(courseActivity);
 	}
 	
 	public String getCourseTerm()

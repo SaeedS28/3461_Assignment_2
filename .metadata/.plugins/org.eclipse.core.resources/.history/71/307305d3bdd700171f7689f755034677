@@ -5,23 +5,23 @@ public class GeneralCourse
 {
 	
 	
-	private String generalCourseName;
+	private String completedCourseName;
 	private int courseCredits;
 	
-	public GeneralCourse(String generalCourseName, int courseCredits)
+	public GeneralCourse(String completedCourseName, int courseCredits)
 	{
-		this.setCompletedCourseName(generalCourseName);
+		this.setCompletedCourseName(completedCourseName);
 		this.setCourseCredits(courseCredits);
 	}
 	
 	public String getCompletedCourseName()
 	{
-		return this.generalCourseName;
+		return this.completedCourseName;
 	}
 	
 	public void setCompletedCourseName(String completedCourseName)
 	{
-		this.generalCourseName = completedCourseName;
+		this.completedCourseName = completedCourseName;
 	}
 	
 	

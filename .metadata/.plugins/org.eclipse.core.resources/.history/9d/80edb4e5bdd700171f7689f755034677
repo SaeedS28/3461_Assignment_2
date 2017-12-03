@@ -8,9 +8,9 @@ public class GeneralCourse
 	private String generalCourseName;
 	private int courseCredits;
 	
-	public GeneralCourse(String generalCourseName, int courseCredits)
+	public GeneralCourse(String completedCourseName, int courseCredits)
 	{
-		this.setCompletedCourseName(generalCourseName);
+		this.setCompletedCourseName(completedCourseName);
 		this.setCourseCredits(courseCredits);
 	}
 	

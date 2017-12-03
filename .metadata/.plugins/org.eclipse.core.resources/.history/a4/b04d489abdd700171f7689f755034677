@@ -7,7 +7,6 @@ public class Course extends GeneralCourse
 	private String courseDesc;
 	private String courseInstructor;
 	private ArrayList<CourseSchedule> courseSchedule;
-	private ArrayList<CourseActivity> courseActivity;
 
 	
 	
@@ -19,7 +18,6 @@ public class Course extends GeneralCourse
 		this.setCourseDesc(courseDesc);
 		this.setCourseInstructor(courseInstructor);
 		this.setCourseSchedule(courseSchedule);
-		this.setCourseActivity(courseActivity);
 	}
 	
 	public String getCourseTerm()
@@ -61,15 +59,5 @@ public class Course extends GeneralCourse
 	public void setCourseSchedule(ArrayList<CourseSchedule> courseSchedule)
 	{
 		this.courseSchedule = courseSchedule;
-	}
-	
-	public ArrayList<CourseActivity> getCourseActivity()
-	{
-		return this.courseActivity;
-	}
-	
-	public void setCourseActivity(ArrayList<CourseActivity> courseActivity)
-	{
-		this.courseActivity = courseActivity;
 	}
 }
