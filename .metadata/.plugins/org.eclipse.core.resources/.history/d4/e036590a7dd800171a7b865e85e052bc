@@ -31,8 +31,6 @@ public class CourseSelectForm extends JFrame {
 	String [] dummyData= {"1","2","3","4","5","6"};
 	StudentInfo studentInfo;
 	
-	private ArrayList<CourseSuggestionOption> studentOptions;
-	
 	@SuppressWarnings("rawtypes")
 	
 	public CourseSelectForm(StudentInfo studentInfo) 
@@ -60,8 +58,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		studentOptions = this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList()));
-		courseOption = new JList(studentOptions.toArray());
+		courseOption = new JList((this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList())).toArray()));
 		
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
@@ -118,12 +115,10 @@ public class CourseSelectForm extends JFrame {
 		this.add(cancelPanel);
 		
 		
-		cancel.addActionListener(new ActionListener() 
-		{
+		cancel.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==cancel) {
 					dispose();
 				}
@@ -132,29 +127,39 @@ public class CourseSelectForm extends JFrame {
 			
 		});
 		
-		enter.addActionListener(new ActionListener()
-		{
+		
+		/*
+		enter.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==enter) {
+						JOptionPane.showConfirmDialog(null, "Course: " + );
+			}
 			
+		});
+		*/
+		
+		enter.addActionListener(this.confirmAndContinue(enter, genCourse, courseOption.getSelectedIndex()));
+		
+		
+	}
+		
+	private ActionListener confirmAndContinue(final JButton button, final ArrayList<CourseSuggestionOption> genCourse, final int selectedIndex)
+	{
+		return (new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
-				if(e.getSource()==enter) 
+				if(e.getSource()== button && selectedIndex > -1) 
 				{
-					JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
-				
+						JOptionPane.showConfirmDialog(null, "Course: " + genCourse.get(selectedIndex));
 				}
-				
 			}
+			
 		});
-	
 	}
-		
-		
-		
-	
-		
-		
-		
 	
 	public String[] generateSuggestions()
 	{

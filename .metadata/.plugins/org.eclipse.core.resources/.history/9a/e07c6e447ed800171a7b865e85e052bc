@@ -131,21 +131,6 @@ public class CourseSelectForm extends JFrame {
 			}
 			
 		});
-		
-		enter.addActionListener(new ActionListener()
-		{
-			
-			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource()==enter) 
-				{
-					JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
-				
-				}
-				
-			}
-		});
 	
 	}
 		

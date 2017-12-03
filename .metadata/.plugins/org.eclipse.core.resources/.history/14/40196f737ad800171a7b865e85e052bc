@@ -13,8 +13,6 @@ public class CourseSelectForm extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	
-	
-	
 	JPanel titlePanel;
 	JLabel title;
 	JList courseOption;
@@ -30,8 +28,6 @@ public class CourseSelectForm extends JFrame {
 	JButton cancel;
 	String [] dummyData= {"1","2","3","4","5","6"};
 	StudentInfo studentInfo;
-	
-	private ArrayList<CourseSuggestionOption> studentOptions;
 	
 	@SuppressWarnings("rawtypes")
 	
@@ -60,8 +56,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		studentOptions = this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList()));
-		courseOption = new JList(studentOptions.toArray());
+		courseOption = new JList((this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList())).toArray()));
 		
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
@@ -118,43 +113,22 @@ public class CourseSelectForm extends JFrame {
 		this.add(cancelPanel);
 		
 		
-		cancel.addActionListener(new ActionListener() 
-		{
+		cancel.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==cancel) {
 					dispose();
 				}
 				
-			}
-			
-		});
-		
-		enter.addActionListener(new ActionListener()
-		{
-			
-			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource()==enter) 
+				if (e.getSource() == enter)
 				{
-					JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
-				
+					JOptionPane.showMessageDialog();
 				}
-				
 			}
+			
 		});
-	
 	}
-		
-		
-		
-	
-		
-		
-		
 	
 	public String[] generateSuggestions()
 	{

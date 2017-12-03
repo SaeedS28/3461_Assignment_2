@@ -118,12 +118,10 @@ public class CourseSelectForm extends JFrame {
 		this.add(cancelPanel);
 		
 		
-		cancel.addActionListener(new ActionListener() 
-		{
+		cancel.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==cancel) {
 					dispose();
 				}
@@ -132,26 +130,17 @@ public class CourseSelectForm extends JFrame {
 			
 		});
 		
-		enter.addActionListener(new ActionListener()
-		{
-			
+		
+		
+		enter.addActionListener(new ActionListener() {
+
 			@Override
-			public void actionPerformed(ActionEvent e) 
-			{
-				if(e.getSource()==enter) 
-				{
-					JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
-				
-				}
-				
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==enter) {
+						JOptionPane.showConfirmDialog(null, "Course: " + this.g );
 			}
+			
 		});
-	
-	}
-		
-		
-		
-	
 		
 		
 		
