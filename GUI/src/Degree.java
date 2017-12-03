@@ -88,6 +88,7 @@ public class Degree
 		Degree cSci = new Degree("Computer Science", "Lassonde School of Engineering", "BSc", 3, 90);
 		
 		//Computer science degree courses
+		cSci.getDegreeCourses().add(new GeneralCourse("EECS 1001: Research in Computer Science", 1));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2030: Java", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2011: Data Structures", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 2021: Computer Organization", 3));
