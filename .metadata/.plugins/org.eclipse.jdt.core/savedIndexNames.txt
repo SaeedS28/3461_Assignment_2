@@ -10,9 +10,8 @@ INDEX VERSION 1.130+/eecs/home/lindan4/FourthYear/EECS3461/3461_Assignment_2/.me
 50633866.index
 3164419005.index
 2382849552.index
-1678551828.index
-2059183729.index
 3692041895.index
-1196712960.index
+2059183729.index
 460357458.index
+1196712960.index
 1869356717.index
