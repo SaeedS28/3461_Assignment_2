@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+
+
+public class Course extends GeneralCourse
+{
+	private String courseTerm;
+	private String courseDesc;
+	private String courseInstructor;
+	private CourseSchedule courseSchedule;
+	private ArrayList<CourseActivity> courseActivity;
+	private ArrayList<GeneralCourse> prereq;
+	
+	
+	
+	public Course(String courseName, int courseCredits, String courseTerm, String courseDesc, String courseInstructor, CourseSchedule courseSchedule, ArrayList<CourseActivity> courseActivity, ArrayList<GeneralCourse> prereq)
+	{
+		super(courseName, courseCredits);
+		this.setCourseTerm(courseTerm);
+		this.setCourseDesc(courseDesc);
+		this.setCourseInstructor(courseInstructor);
+		this.setCourseSchedule(courseSchedule);
+		this.setCourseActivity(courseActivity);
+	}
+	
+	public String getCourseTerm()
+	{
+		return this.courseTerm;
+	}
+	
+	public void setCourseTerm(String courseTerm)
+	{
+		this.courseTerm = courseTerm;
+	}
+	
+	public String getCourseDesc()
+	{
+		return this.courseDesc;
+	}
+	
+	public void setCourseDesc(String courseDesc)
+	{
+		this.courseDesc = courseDesc;
+	}
+	
+	
+	public String getCourseInstructor()
+	{
+		return this.courseInstructor;
+	}
+	
+	public void setCourseInstructor(String courseInstructor)
+	{
+		this.courseInstructor = courseInstructor;
+	}
+	
+	public CourseSchedule getCourseSchedule()
+	{
+		return this.courseSchedule;
+	}
+	
+	public void setCourseSchedule(CourseSchedule courseSchedule)
+	{
+		this.courseSchedule = courseSchedule;
+	}
+	
+	public ArrayList<CourseActivity> getCourseActivity()
+	{
+		return this.courseActivity;
+	}
+	
+	public void setCourseActivity(ArrayList<CourseActivity> courseActivity)
+	{
+		this.courseActivity = courseActivity;
+	}
+	
+	public ArrayList<GeneralCourse> getPrereq()
+	{
+		return this.prereq;
+	}
+	
+	public void setPrereq(ArrayList<GeneralCourse> prereq)
+	{
+		this.prereq = prereq;
+	}
+}

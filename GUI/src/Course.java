@@ -6,13 +6,13 @@ public class Course extends GeneralCourse
 	private String courseTerm;
 	private String courseDesc;
 	private String courseInstructor;
-	private ArrayList<CourseSchedule> courseSchedule;
+	private CourseSchedule courseSchedule;
 	private ArrayList<CourseActivity> courseActivity;
-
+	private ArrayList<GeneralCourse> prereq;
 	
 	
 	
-	public Course(String courseName, int courseCredits, String courseTerm, String courseDesc, String courseInstructor, ArrayList<CourseSchedule> courseSchedule, ArrayList<CourseActivity> courseActivity)
+	public Course(String courseName, int courseCredits, String courseTerm, String courseDesc, String courseInstructor, CourseSchedule courseSchedule, ArrayList<CourseActivity> courseActivity, ArrayList<GeneralCourse> prereq)
 	{
 		super(courseName, courseCredits);
 		this.setCourseTerm(courseTerm);
@@ -20,6 +20,7 @@ public class Course extends GeneralCourse
 		this.setCourseInstructor(courseInstructor);
 		this.setCourseSchedule(courseSchedule);
 		this.setCourseActivity(courseActivity);
+		this.setPrereq(prereq);
 	}
 	
 	public String getCourseTerm()
@@ -53,12 +54,12 @@ public class Course extends GeneralCourse
 		this.courseInstructor = courseInstructor;
 	}
 	
-	public ArrayList<CourseSchedule> getCourseSchedule()
+	public CourseSchedule getCourseSchedule()
 	{
 		return this.courseSchedule;
 	}
 	
-	public void setCourseSchedule(ArrayList<CourseSchedule> courseSchedule)
+	public void setCourseSchedule(CourseSchedule courseSchedule)
 	{
 		this.courseSchedule = courseSchedule;
 	}
@@ -71,5 +72,15 @@ public class Course extends GeneralCourse
 	public void setCourseActivity(ArrayList<CourseActivity> courseActivity)
 	{
 		this.courseActivity = courseActivity;
+	}
+	
+	public ArrayList<GeneralCourse> getPrereq()
+	{
+		return this.prereq;
+	}
+	
+	public void setPrereq(ArrayList<GeneralCourse> prereq)
+	{
+		this.prereq = prereq;
 	}
 }

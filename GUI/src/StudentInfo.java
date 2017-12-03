@@ -11,12 +11,12 @@ public class StudentInfo
 	private String studentProgram;
 	private int studentYear;
 	private String studentFaculty;
-	private ArrayList<Course> finishedCourses;
+	private ArrayList<GeneralCourse> finishedCourses;
 	private int completedCredits;
 	private int remainingCredits;
 	
 	public StudentInfo(String userName, String password, String firstName, String lastName, int studentNo, String studentProgram, int 
-			studentYear, String studentFaculty, ArrayList<Course> finishedCourses, int completedCredits, int remainingCredits)
+			studentYear, String studentFaculty, ArrayList<GeneralCourse> finishedCourses, int completedCredits, int remainingCredits)
 	{
 		this.setUsername(userName);
 		this.setPassword(password);
@@ -111,12 +111,12 @@ public class StudentInfo
 		this.studentFaculty = studentFaculty;
 	}
 	
-	public ArrayList<Course> getFinishedCoursesList()
+	public ArrayList<GeneralCourse> getFinishedCoursesList()
 	{
 		return this.finishedCourses;
 	}
 	
-	public void setFinishedCoursesList(ArrayList<Course> finishedCourses)
+	public void setFinishedCoursesList(ArrayList<GeneralCourse> finishedCourses)
 	{
 		this.finishedCourses = finishedCourses;
 	}
@@ -144,8 +144,36 @@ public class StudentInfo
 	public static ArrayList<StudentInfo> sampleStudentInfo()
 	{
 		ArrayList<StudentInfo> sInfo = new ArrayList<StudentInfo>();
-		sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", new ArrayList<Course>(), 90, 30));
-		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", new ArrayList<Course>(), 60, 60));
+		
+		//Saad's completed courses
+		ArrayList<GeneralCourse> saadCompletedCoursesComSci = new ArrayList<GeneralCourse>();
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 1001: Research in Computer Science", 1));		
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 2030: Java", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 2011: Data Structures", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 2021: Computer Organization", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 2031: Software Tools", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 2001: Theory of Computation", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 1012: Introduction to Computer Science 1", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 1022: Introduction to Computer Science 2", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("EECS 1019: Discrete Mathematics", 3));
+		
+		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 1013: Applied Calculus 1", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 1014: Applied Calculus 2", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 1090: Introduction to Logic", 3));
+		saadCompletedCoursesComSci.add(new GeneralCourse("MATH 2030: Elementary Probability", 3));
+		
+		
+		//Lindan's completed courses
+		
+		ArrayList<GeneralCourse> lindanCompletedCoursesGerman = new ArrayList<GeneralCourse>();
+		lindanCompletedCoursesGerman.add(new GeneralCourse("GER 1000: Elementary German", 6));
+		lindanCompletedCoursesGerman.add(new GeneralCourse("GER 2000: Intermediate German", 6));
+		
+		
+		sInfo.add(new StudentInfo("lindan4", "12345678", "Lindan", "Thill", 213742176, "German Studies", 2017, "Faculty of Liberal Arts", lindanCompletedCoursesGerman, 90, 30));
+		sInfo.add(new StudentInfo("saeeds28", "12345678", "Saad", "Saeed", 123445565, "Computer Science", 2017, "Lassonde School of Engineering", saadCompletedCoursesComSci, 60, 60));
+		
+		
 		
 		return sInfo;
 	}

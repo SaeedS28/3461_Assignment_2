@@ -102,9 +102,11 @@ public class Degree
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 3221: Operating Systems", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 3421: Introduction to Database Systems", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("EECS 3461: User Interfaces", 3));
+		cSci.getDegreeCourses().add(new GeneralCourse("EECS 1019: Discrete Mathematics", 3));
 		
 		cSci.getDegreeCourses().add(new GeneralCourse("MATH 1013: Applied Calculus 1", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("MATH 1014: Applied Calculus 2", 3));
+		cSci.getDegreeCourses().add(new GeneralCourse("MATH 1090: Introduction to Logic", 3));
 		cSci.getDegreeCourses().add(new GeneralCourse("MATH 2030: Elementary Probability", 3));
 		
 		
@@ -115,7 +117,7 @@ public class Degree
 		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 1000: Elementary German", 6));
 		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 2000: Intermediate German", 6));
 		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 3001: Advanced German 1", 3));
-		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 3001: Advanced German 2", 3));
+		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 3002: Advanced German 2", 3));
 		germanStudies.getDegreeCourses().add(new GeneralCourse("GER 3989: Germany and the Global Imaginary", 6));
 		
 		sampleList.add(germanStudies);
