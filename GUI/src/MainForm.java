@@ -113,20 +113,45 @@ public class MainForm extends JFrame{
 					this.add(test[i].getCourseDetailPanel());
 				}
 				
+				degreeProgress.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if(e.getSource()==degreeProgress) {
+							DegreeProgress dp = new DegreeProgress();
+							dp.setVisible(true);
+						}
+						
+					}
+					
+				});
+				
+				logout.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						if(arg0.getSource()==logout) {
+							dispose();
+							JOptionPane.showMessageDialog(null, "You have successfully logged out");
+							dispose();
+							System.exit(0);
+						}
+					}
+					
+				});
 				addCourse.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						if(arg0.getSource()==addCourse) {
 							if(count<test.length) {
-								
 								//test[count].getRemoveButton().setVisible(true);
 								//test[count].getExchangeButton().setVisible(true);
 								//test[count].getCourseLabel().setVisible(true);
 								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
 								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
-								CourseSelectForm fuck = new CourseSelectForm(selectedUser);
-								fuck.setVisible(true);
+								CourseSelectForm fu = new CourseSelectForm(selectedUser);
+								fu.setVisible(true);
 								count++;
 							}
 							else {

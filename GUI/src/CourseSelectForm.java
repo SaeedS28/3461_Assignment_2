@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -31,7 +33,7 @@ public class CourseSelectForm extends JFrame {
 	
 	public CourseSelectForm(StudentInfo studentInfo) 
 	{
-		super("Select Lab/Tutorial");
+		super("Select Course");
 		this.studentInfo=studentInfo;
 		this.setSize(675,500);
 		this.setResizable(false);
@@ -54,7 +56,7 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(this.generateSuggestions().toArray());
+		courseOption = new JList(this.generateSuggestions());
 		
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
@@ -62,8 +64,8 @@ public class CourseSelectForm extends JFrame {
 		courseOption.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scroller=new JScrollPane(courseOption);
 		listPanel = new JPanel();
-		listPanel.setLocation(175,130);
-		listPanel.setSize(75,120);
+		listPanel.setLocation(50,130);
+		listPanel.setSize(600,120);
 		listPanel.add(scroller);
 		
 		//Or enter the course code title
@@ -109,16 +111,32 @@ public class CourseSelectForm extends JFrame {
 		this.add(textPanel);
 		this.add(enterPanel);
 		this.add(cancelPanel);
+		
+		
+		cancel.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==cancel) {
+					dispose();
+				}
+			}
+			
+		});
 	}
 	
-	public ArrayList<GeneralCourse> generateSuggestions()
+	public String[] generateSuggestions()
 	{
 		//ArrayList<Course> listOfCourses = new ArrayList<Course>();
 		
 		//ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
 		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
+		String[] array= new String[degreeCourses.size()];
 		
-		return degreeCourses;
+		for(int i=0;i<degreeCourses.size();i++) {
+			array[i]=degreeCourses.get(i).getGeneralCourseName();
+		}	
+		return array;
 		
 	}
 }

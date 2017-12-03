@@ -147,8 +147,8 @@ public class LoginScreen extends JFrame {
 					}
 					else
 					{
-						//statusBar.setText("Incorrect York credentials! Try again");
-						statusBar.setText( userNameField.getText() + " " + passCharToString(passwordField.getPassword()));
+						statusBar.setText("Incorrect York credentials! Try again");
+						//statusBar.setText( userNameField.getText() + " " + passCharToString(passwordField.getPassword()));
 						statusBar.setForeground(Color.RED);
 					}
 				}	
