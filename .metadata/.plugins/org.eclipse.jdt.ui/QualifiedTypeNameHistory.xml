@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="AddTutotialLabs"/>
-<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-=======
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
->>>>>>> 542a18402ef30c71d3f017c71e0376b45f445d0a
 </qualifiedTypeNameHistroy>
