@@ -158,8 +158,7 @@ public class CourseSelectForm extends JFrame {
 						}
 						else
 						{
-							ActivitySelectionForm ca = new ActivitySelectionForm(selectedCourse);
-							ca.setVisible(true);
+							
 							
 						}
 						
