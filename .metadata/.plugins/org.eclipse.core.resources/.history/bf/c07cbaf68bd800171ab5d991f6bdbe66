@@ -25,7 +25,6 @@ public class MainForm extends JFrame{
 	
 	private StudentLogin loginAttempt;
 	private ArrayList<StudentInfo> sampleStudentInfo = StudentInfo.sampleStudentInfo();
-	private ArrayList<Course> currentlyEnrolledCourses;
 	private String currentTerm = "FW 2017-2018";
 	MainForm mf;
 	
@@ -44,7 +43,6 @@ public class MainForm extends JFrame{
 				this.getContentPane().setLayout(null);
 				mf=this;
 				this.loginAttempt = studentLoginInfo;
-				currentlyEnrolledCourses = enrolledCourses;
 				
 				Font font= new Font("Arial", Font.BOLD, 30);
 				Font font2= new Font("Arial", Font.BOLD, 20);
@@ -99,8 +97,8 @@ public class MainForm extends JFrame{
 				addCoursePanel.setLocation(30, 50);
 				addCoursePanel.setSize(150, 50);
 				addCoursePanel.add(addCourse);
-				
-				
+				addCoursePanel.add(Box.createRigidArea(new Dimension(0, 20)));
+				addCoursePanel.add(addCourse);
 				
 				
 				//Adding to the form
@@ -160,7 +158,7 @@ public class MainForm extends JFrame{
 								
 									JOptionPane.showMessageDialog(null, "Go fuck yourself!");
 								
-								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, currentlyEnrolledCourses);
+								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf);
 								fu.setVisible(true);
 								count++;
 							}
@@ -188,20 +186,6 @@ public class MainForm extends JFrame{
 	
 	public void addToCourseList(Course course)
 	{
-		if (count < 10)
-		{
-			currentlyEnrolledCourses.add(course);
-			this.test[count].getCourseLabel().setText(course.getGeneralCourseName() + " (" + course.getCourseTerm() + ")");
-			this.test[count].getCourseLabel().setVisible(true);
-			this.test[count].getRemoveButton().setVisible(true);
-			this.test[count].getExchangeButton().setVisible(true);
-			this.test[count].setAppendedCourse(course);
-			count++;
-		}
-		else
-		{
-			
-		}
 		
 	}
 

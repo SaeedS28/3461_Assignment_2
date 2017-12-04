@@ -160,7 +160,7 @@ public class MainForm extends JFrame{
 								
 									JOptionPane.showMessageDialog(null, "Go fuck yourself!");
 								
-								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, currentlyEnrolledCourses);
+								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf);
 								fu.setVisible(true);
 								count++;
 							}

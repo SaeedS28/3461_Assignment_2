@@ -225,17 +225,6 @@ public class CourseSelectForm extends JFrame {
 			
 		}
 		
-		for (Course sH : enrolledCourses)
-		{
-			for (int k = 0; k < untakenCourses.size(); k = k + 1)
-			{
-				if (sH.getGeneralCourseName().equals(untakenCourses.get(k).getGeneralCourseName()))
-				{
-					untakenCourses.remove(k);
-				}
-			}
-		}
-		
 		return untakenCourses;
 	}
 	

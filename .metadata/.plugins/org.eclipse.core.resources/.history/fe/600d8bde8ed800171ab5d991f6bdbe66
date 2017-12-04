@@ -33,15 +33,12 @@ public class CourseSelectForm extends JFrame {
 	MainForm localMf;
 	private ArrayList<CourseSuggestionOption> studentOptions;
 	
-	private ArrayList<Course> enrolledCourses;
-	
 	@SuppressWarnings("rawtypes")
 	
-	public CourseSelectForm(StudentInfo studentInfo, MainForm mf, ArrayList<Course> studentEnrolledCourses) 
+	public CourseSelectForm(StudentInfo studentInfo, MainForm mf) 
 	{
 		super("Select Course");
 		this.studentInfo=studentInfo;
-		this.enrolledCourses = studentEnrolledCourses;
 		this.setSize(675,500);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -151,10 +148,11 @@ public class CourseSelectForm extends JFrame {
 						
 						if (selectedCourse.getCourseActivity() == null)
 						{
-							mf.addToCourseList(selectedCourse);
-							dispose();
+						//	mf.test[1].courseDetails.setText(selectedCourse.getCourseDesc());
 							//System.out.println("rape me, daddy!");
-							//dispose							
+							//dispose();
+							
+							
 						}
 						else
 						{
@@ -177,7 +175,12 @@ public class CourseSelectForm extends JFrame {
 	
 	}
 		
-			
+		
+		
+	
+		
+		
+		
 	
 	public String[] generateSuggestions()
 	{
@@ -189,7 +192,9 @@ public class CourseSelectForm extends JFrame {
 		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
 		String[] array= new String[degreeCourses.size()];
 		
-		
+		for(int i=0;i<degreeCourses.size();i++) {
+			array[i]=degreeCourses.get(i).getGeneralCourseName();
+		}	
 		return array;
 		
 	}
@@ -223,17 +228,6 @@ public class CourseSelectForm extends JFrame {
 				
 			}
 			
-		}
-		
-		for (Course sH : enrolledCourses)
-		{
-			for (int k = 0; k < untakenCourses.size(); k = k + 1)
-			{
-				if (sH.getGeneralCourseName().equals(untakenCourses.get(k).getGeneralCourseName()))
-				{
-					untakenCourses.remove(k);
-				}
-			}
 		}
 		
 		return untakenCourses;

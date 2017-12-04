@@ -10,7 +10,6 @@ public class CompositeAdd {
 	JButton exchangeButton;
 	JButton removeButton;
 	JLabel courseDetails;
-	private Course appendedCourse;
 	static int count=30;
 	
 	public CompositeAdd() {
@@ -70,16 +69,6 @@ public class CompositeAdd {
 	
 	public JPanel getCourseDetailPanel() {
 		return this.courseDetailsPanel;
-	}
-	
-	public Course getAppendedCourse()
-	{
-		return this.appendedCourse;
-	}
-	
-	public void setAppendedCourse(Course appendedCourse)
-	{
-		this.appendedCourse = appendedCourse;
 	}
 	
 }
