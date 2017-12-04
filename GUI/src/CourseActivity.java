@@ -8,12 +8,36 @@ public abstract class CourseActivity
 	
 	public CourseActivity(String activityInstructor, String dayAvailable, String timeFrame)
 	{
-		this.activityInstructor = activityInstructor;
-		this.dayAvailable = dayAvailable;
-		this.timeFrame = timeFrame;
+		this.setActivityInstructor(activityInstructor);
+		this.setDayAvailable(dayAvailable);
+		this.setTimeFrame(timeFrame);
 		
 	}
 	
-	
+	public abstract String toString();
+
+	public String getTimeFrame() {
+		return timeFrame;
+	}
+
+	public void setTimeFrame(String timeFrame) {
+		this.timeFrame = timeFrame;
+	}
+
+	public String getDayAvailable() {
+		return dayAvailable;
+	}
+
+	public void setDayAvailable(String dayAvailable) {
+		this.dayAvailable = dayAvailable;
+	}
+
+	public String getActivityInstructor() {
+		return activityInstructor;
+	}
+
+	public void setActivityInstructor(String activityInstructor) {
+		this.activityInstructor = activityInstructor;
+	}
 
 }

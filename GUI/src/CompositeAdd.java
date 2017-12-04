@@ -14,7 +14,7 @@ public class CompositeAdd {
 	static int count=30;
 	
 	public CompositeAdd() {
-		count+=40;
+		count+=30;
 		Font font= new Font("Arial", Font.BOLD, 20);
 		addPanel=new JPanel();
 		exchangePanel = new JPanel();
@@ -32,16 +32,16 @@ public class CompositeAdd {
 		courseDetails.setFont(font);
 		
 		//component setup
-		addPanel.setLocation(400, count);
+		addPanel.setLocation(610, count);
 		addPanel.setSize(50,40);
 		addPanel.add(removeButton);
 		
-		exchangePanel.setLocation(460, count);
+		exchangePanel.setLocation(670, count);
 		exchangePanel.setSize(60,40);
 		exchangePanel.add(exchangeButton);
 		
 		courseDetailsPanel.setLocation(30, count);
-		courseDetailsPanel.setSize(340, 40);
+		courseDetailsPanel.setSize(550, 40);
 		courseDetailsPanel.add(courseDetails);
 		
 		

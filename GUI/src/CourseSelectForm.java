@@ -42,7 +42,7 @@ public class CourseSelectForm extends JFrame {
 		super("Select Course");
 		this.studentInfo=studentInfo;
 		this.enrolledCourses = studentEnrolledCourses;
-		this.setSize(675,500);
+		this.setSize(675,480);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -52,13 +52,14 @@ public class CourseSelectForm extends JFrame {
 		
 		Font font= new Font("Arial", Font.BOLD, 26);
 		Font font2= new Font("Arial", Font.BOLD, 20);
+		Font font3= new Font("Arial", Font.BOLD, 15);
 		
 		//Title components
 		titlePanel=new JPanel();
 		title=new JLabel("Select course from the list");
 		title.setFont(font);
 		title.setVisible(true);
-		titlePanel.setLocation(165, 50);
+		titlePanel.setLocation(155, 50);
 		titlePanel.setSize(350, 70);
 		titlePanel.add(title);
 		
@@ -72,35 +73,26 @@ public class CourseSelectForm extends JFrame {
 		courseOption.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scroller=new JScrollPane(courseOption);
 		listPanel = new JPanel();
-		listPanel.setLocation(50,130);
+		listPanel.setLocation(30,130);
 		listPanel.setSize(600,120);
 		listPanel.add(scroller);
 		
 		//Or enter the course code title
-		captionTitleLabel=new JLabel("Or enter the course code below");
-		captionTitleLabel.setFont(font);
+		captionTitleLabel=new JLabel("List generated based on completed prereqs and seat availability");
+		captionTitleLabel.setFont(font3);
 		captionTitleLabel.setVisible(true);
 		captionTitle=new JPanel();
-		captionTitle.setLocation(135,300);
-		captionTitle.setSize(400, 70);
+		captionTitle.setLocation(80,300);
+		captionTitle.setSize(500, 70);
 		captionTitle.add(captionTitleLabel);
-		
-		//textfield component
-		text = new JTextField(15);
-		text.setFont(font2);
-		text.setVisible(true);
-		textPanel = new JPanel();
-		textPanel.setLocation(190, 350);
-		textPanel.setSize(275,40);
-		textPanel.add(text);
-		
+
 		//Enter button components
-		enter=new JButton("Enter");
+		enter=new JButton("Confirm");
 		enter.setFont(font2);
 		enter.setVisible(true);
 		enterPanel=new JPanel();
-		enterPanel.setLocation(190, 400);
-		enterPanel.setSize(95, 50);
+		enterPanel.setLocation(190, 380);
+		enterPanel.setSize(110, 50);
 		enterPanel.add(enter);
 		
 		//Cancel button components
@@ -108,7 +100,7 @@ public class CourseSelectForm extends JFrame {
 		cancel.setFont(font2);
 		cancel.setVisible(true);
 		cancelPanel=new JPanel();
-		cancelPanel.setLocation(355, 400);
+		cancelPanel.setLocation(355, 380);
 		cancelPanel.setSize(100, 50);
 		cancelPanel.add(cancel);
 		
@@ -116,7 +108,6 @@ public class CourseSelectForm extends JFrame {
 		this.add(titlePanel);
 		this.add(listPanel);
 		this.add(captionTitle);
-		this.add(textPanel);
 		this.add(enterPanel);
 		this.add(cancelPanel);
 		

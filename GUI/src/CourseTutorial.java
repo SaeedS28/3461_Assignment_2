@@ -7,5 +7,8 @@ public class CourseTutorial extends CourseActivity
 		// TODO Auto-generated constructor stub
 	}
 
+	public String toString() {
+		return "Instructor: "+ this.getActivityInstructor()+" " + this.getDayAvailable()+ " "+ this.getTimeFrame();
+	}
 
 }

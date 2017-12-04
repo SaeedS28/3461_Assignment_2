@@ -1,0 +1,90 @@
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import java.util.*;
+public class ActivitySelectionForm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JPanel titlePanel;
+	JLabel title;
+	JList courseOption;
+	JScrollPane scroller;
+	JPanel listPanel;
+	JPanel confirmPanel;
+	JButton confirm;
+	ArrayList<CourseActivity> activity;
+	
+	public ActivitySelectionForm(Course course) {
+		super("Select the activity");
+		activity= course.getCourseActivity();
+		this.setSize(675,800);
+		this.setResizable(false);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		//Component initialization
+		this.getContentPane().setLayout(null);
+		
+		Font font= new Font("Arial", Font.BOLD, 26);
+		Font font2= new Font("Arial", Font.BOLD, 20);
+		
+		//Title components
+		titlePanel=new JPanel();
+		title=new JLabel("Select a lab from the list");
+		title.setFont(font);
+		title.setVisible(true);
+		titlePanel.setLocation(125, 50);
+		titlePanel.setSize(450, 70);
+		titlePanel.add(title);
+		
+		//List components
+		courseOption = new JList(getLabs(course).toArray());
+		courseOption.setVisible(true);
+		courseOption.setFont(font2);
+		courseOption.setVisibleRowCount(4);
+		courseOption.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		scroller=new JScrollPane(courseOption);
+		listPanel = new JPanel();
+		listPanel.setLocation(100,120);
+		listPanel.setSize(500,150);
+		listPanel.add(scroller);
+		
+		//Confirm button components
+		confirm=new JButton("Confirm");
+		confirm.setFont(font2);
+		confirm.setVisible(true);
+		confirmPanel=new JPanel();
+		confirmPanel.setLocation(290, 700);
+		confirmPanel.setSize(120, 50);
+		confirmPanel.add(confirm);
+		
+		//Add things to the JFrame
+		this.add(titlePanel);
+		this.add(listPanel);
+		this.add(confirmPanel);
+	}
+	
+	private ArrayList<CourseLab> getLabs(Course course)
+	{
+		ArrayList<CourseLab> cls=new ArrayList<CourseLab>();
+		for (CourseActivity cAct: course.getCourseActivity()) 
+		{
+			if (cAct instanceof CourseLab)
+			{
+				cls.add((CourseLab)cAct);
+			}
+			
+		}
+		return cls;
+
+	}
+}

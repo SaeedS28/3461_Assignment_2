@@ -1,0 +1,27 @@
+
+public abstract class CourseActivity 
+{
+	
+	private String activityInstructor;
+	private String dayAvailable;
+	private String timeFrame;
+	
+	public CourseActivity(String activityInstructor, String dayAvailable, String timeFrame)
+	{
+		this.activityInstructor = activityInstructor;
+		this.dayAvailable = dayAvailable;
+		this.setTimeFrame(timeFrame);
+		
+	}
+	
+	public abstract String toString();
+
+	public String getTimeFrame() {
+		return timeFrame;
+	}
+
+	public void setTimeFrame(String timeFrame) {
+		this.timeFrame = timeFrame;
+	}
+
+}

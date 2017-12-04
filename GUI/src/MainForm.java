@@ -100,9 +100,6 @@ public class MainForm extends JFrame{
 				addCoursePanel.setSize(150, 50);
 				addCoursePanel.add(addCourse);
 				
-				
-				
-				
 				//Adding to the form
 				this.add(logoutPanel);
 				this.add(degreeProgressPanel);
@@ -158,7 +155,7 @@ public class MainForm extends JFrame{
 								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
 								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
 								
-									JOptionPane.showMessageDialog(null, "Go fuck yourself!");
+								//	JOptionPane.showMessageDialog(null, "Go fuck yourself!");
 								
 								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, currentlyEnrolledCourses);
 								fu.setVisible(true);
