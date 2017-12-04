@@ -109,7 +109,7 @@ public class MainForm extends JFrame{
 				
 				test=new CompositeAdd[10];
 				for(int i=0;i<test.length;i++) {
-					test[i]=new CompositeAdd();
+					test[i]=new CompositeAdd(mf);
 				}
 				for(int i =0;i<test.length;i++) {
 					this.add(test[i].getAddPanel());
@@ -170,6 +170,10 @@ public class MainForm extends JFrame{
 				});
 	}
 	
+	
+	
+	
+	
 	public StudentInfo getStudent(StudentLogin info)
 	{
 		for (StudentInfo si : sampleStudentInfo)
@@ -188,11 +192,13 @@ public class MainForm extends JFrame{
 		if (count < 10)
 		{
 			currentlyEnrolledCourses.add(course);
+			this.test[count].setAppendedCourse(course);
 			this.test[count].getCourseLabel().setText(course.getGeneralCourseName() + " (" + course.getCourseTerm() + ")");
 			this.test[count].getCourseLabel().setVisible(true);
 			this.test[count].getRemoveButton().setVisible(true);
+			
 			this.test[count].getExchangeButton().setVisible(true);
-			this.test[count].setAppendedCourse(course);
+			
 			count++;
 		}
 		else
@@ -200,6 +206,104 @@ public class MainForm extends JFrame{
 			
 		}
 		
+	}
+	
+	public void removeCourseFromList(Course course)
+	{
+		
+		int courseToRemoveIndex = getCourseIndexInArray(course);
+		currentlyEnrolledCourses.remove(course);
+		//JOptionPane.showMessageDialog(null, courseToRemoveIndex);
+		//JOptionPane.showMessageDialog(null, courseToRemoveIndex);
+		//JOptionPane.showMessageDialog(null, test[courseToRemoveIndex].getAppendedCourse().getGeneralCourseName());
+		
+		
+		test[courseToRemoveIndex].getCourseLabel().setVisible(false);
+		test[courseToRemoveIndex].getRemoveButton().setVisible(false);
+		test[courseToRemoveIndex].getExchangeButton().setVisible(false);
+		test[courseToRemoveIndex].setAppendedCourse(null);
+
+		
+		
+		ArrayList<CompositeAdd> newList = new ArrayList<CompositeAdd>();
+		
+		
+		
+		
+		
+		for (int i = 0; i < test.length; i = i + 1)
+		{
+			if (test[i].getAppendedCourse() != null)
+			{
+				newList.add(test[i]);
+				// i = 0;
+				
+			}
+			test[i].getCourseLabel().setVisible(false);
+			test[i].getRemoveButton().setVisible(false);
+			test[i].getExchangeButton().setVisible(false);
+			test[i].setAppendedCourse(null);
+			
+		}
+		
+		
+		
+		//count = newList.size();
+		count--;
+		//JOptionPane.showMessageDialog(null, newList.size());
+		
+		int j = 0;
+		for (Course s : currentlyEnrolledCourses)
+		{
+			test[j].setAppendedCourse(s);
+			test[j].getCourseLabel().setText(s.getGeneralCourseName() + " (" + s.getCourseTerm() + ")");
+			//JOptionPane.showMessageDialog(null, "message");
+			test[j].getCourseLabel().setVisible(true);
+			test[j].getRemoveButton().setVisible(true);
+			test[j].getExchangeButton().setVisible(true);
+			j++;
+		}
+		
+		
+		/*
+		for (int j = 0; j < newList.size(); j = j + 1)
+		{
+			
+				Course 
+				test[j].setAppendedCourse(newList.get(j).getAppendedCourse());
+				test[j].getCourseLabel().setText(newList.get(j).getCourseLabel().getText());
+				//JOptionPane.showMessageDialog(null, "message");
+				test[j].getCourseLabel().setVisible(true);
+				test[j].getRemoveButton().setVisible(true);
+				test[j].getExchangeButton().setVisible(true);
+			}
+		}
+		*/
+		
+			
+			
+			
+			//newList.get(j).getAppendedCourse();
+			
+
+		
+	}
+	
+	
+
+	private int getCourseIndexInArray(Course course)
+	{
+		//JOptionPane.showMessageDialog(null, test.length);
+		course.getGeneralCourseName();
+		for (int i = 0; i < test.length; i = i + 1)
+		{
+			if (test[i].getCourseLabel().getText().equals(course.getGeneralCourseName() + " (" + course.getCourseTerm() + ")"))
+			{
+				return i;
+			}
+			
+		}
+		return -1;
 	}
 
 }

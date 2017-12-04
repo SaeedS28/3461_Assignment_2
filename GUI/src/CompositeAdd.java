@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -10,12 +12,19 @@ public class CompositeAdd {
 	JButton exchangeButton;
 	JButton removeButton;
 	JLabel courseDetails;
-	private Course appendedCourse;
-	static int count=30;
 	
-	public CompositeAdd() {
+	int calledAl = 0;
+	
+	private Course appendedCourse;
+	private MainForm thisMf;
+	static int count=70;
+	
+	public CompositeAdd(MainForm mf) 
+	{
 		count+=30;
 		Font font= new Font("Arial", Font.BOLD, 20);
+		thisMf = mf;
+		//this.setAppendedCourse(appendedCourse);
 		addPanel=new JPanel();
 		exchangePanel = new JPanel();
 		courseDetailsPanel =new JPanel();
@@ -27,6 +36,7 @@ public class CompositeAdd {
 		removeButton.setToolTipText("Remove the course");
 		removeButton.setVisible(false);
 		removeButton.setFont(font);
+		
 		courseDetails = new JLabel();
 		courseDetails.setVisible(false);
 		courseDetails.setFont(font);
@@ -80,6 +90,27 @@ public class CompositeAdd {
 	public void setAppendedCourse(Course appendedCourse)
 	{
 		this.appendedCourse = appendedCourse;
+		removeButton.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				if (e.getSource() == removeButton && appendedCourse != null && calledAl == 0)
+				{
+					
+						int response = JOptionPane.showConfirmDialog(null, "\"" + courseDetails.getText()   + "\" will be removed. Continue?", "Confirm course removal",JOptionPane.YES_NO_OPTION);
+						if (response == JOptionPane.YES_OPTION)
+						{
+							calledAl = 1;
+							thisMf.removeCourseFromList(appendedCourse);
+						}
+						
+					
+				}
+			}	
+		});
 	}
 	
 }

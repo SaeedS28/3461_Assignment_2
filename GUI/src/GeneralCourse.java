@@ -35,4 +35,6 @@ public class GeneralCourse
 		this.courseCredits = courseCredits;
 	}
 
+
+
 }

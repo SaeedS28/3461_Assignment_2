@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Course extends GeneralCourse
 {
+	private String courseName;
+	private int courseCredits;
 	private String courseTerm;
 	private String courseDesc;
 	private String courseInstructor;
@@ -22,6 +24,8 @@ public class Course extends GeneralCourse
 		this.setCourseActivity(courseActivity);
 		this.setPrereq(prereq);
 	}
+	
+	
 	
 	public String getCourseTerm()
 	{
@@ -330,6 +334,7 @@ public class Course extends GeneralCourse
 		
 		return mockComCourses;
 	}
+
 	
 	
 }
