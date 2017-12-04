@@ -13,6 +13,8 @@ public class CourseSelectForm extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	
+	
+	
 	JPanel titlePanel;
 	JLabel title;
 	JList courseOption;
@@ -28,10 +30,12 @@ public class CourseSelectForm extends JFrame {
 	JButton cancel;
 	String [] dummyData= {"1","2","3","4","5","6"};
 	StudentInfo studentInfo;
+	MainForm localMf;
+	private ArrayList<CourseSuggestionOption> studentOptions;
 	
 	@SuppressWarnings("rawtypes")
 	
-	public CourseSelectForm(StudentInfo studentInfo) 
+	public CourseSelectForm(StudentInfo studentInfo, MainForm mf) 
 	{
 		super("Select Course");
 		this.studentInfo=studentInfo;
@@ -39,7 +43,7 @@ public class CourseSelectForm extends JFrame {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		
+		this.localMf=mf;
 		//Component initialization
 		this.getContentPane().setLayout(null);
 		
@@ -56,7 +60,8 @@ public class CourseSelectForm extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(this.generateSuggestions());
+		studentOptions = this.generateOptions(this.courseDiff(Course.generateComSciCourses(), studentInfo.getFinishedCoursesList()));
+		courseOption = new JList(studentOptions.toArray());
 		
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
@@ -113,21 +118,73 @@ public class CourseSelectForm extends JFrame {
 		this.add(cancelPanel);
 		
 		
-		cancel.addActionListener(new ActionListener() {
+		cancel.addActionListener(new ActionListener() 
+		{
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
 				if(e.getSource()==cancel) {
 					dispose();
 				}
+				
 			}
 			
 		});
+		
+		enter.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(e.getSource()==enter) 
+				{
+					int response = JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
+					
+					if (response == JOptionPane.YES_OPTION)
+					{
+						Course selectedCourse = getSelectedCourse(studentOptions.get(courseOption.getSelectedIndex()).getCourse().getGeneralCourseName());
+						
+						if (selectedCourse.getCourseActivity() == null)
+						{
+						//	mf.test[1].courseDetails.setText(selectedCourse.getCourseDesc());
+							System.out.println("rape me, daddy!");
+							dispose();
+						}
+						else
+						{
+							
+							
+						}
+						
+					}
+					else
+					{
+						dispose();
+					}
+					
+					
+					
+				}
+				
+			}
+		});
+	
 	}
+		
+		
+		
+	
+		
+		
+		
 	
 	public String[] generateSuggestions()
 	{
 		//ArrayList<Course> listOfCourses = new ArrayList<Course>();
+		ArrayList<Course> comSciCourses = Course.generateComSciCourses();
+		ArrayList<GeneralCourse> saadCourses = StudentInfo.sampleStudentInfo().get(0).getFinishedCoursesList();
 		
 		//ArrayList<GeneralCourse> studentCourses = this.studentInfo.getFinishedCoursesList();
 		ArrayList<GeneralCourse> degreeCourses = this.studentInfo.getStudentDegree().getDegreeCourses();
@@ -139,4 +196,68 @@ public class CourseSelectForm extends JFrame {
 		return array;
 		
 	}
+	
+	
+	private ArrayList<Course> courseDiff(ArrayList<Course> courses, ArrayList<GeneralCourse> generalCourses)
+	{
+		ArrayList<Course> untakenCourses = new ArrayList<Course>();
+		
+		boolean courseExists = false;
+		//Iterate over Saad's courses
+		
+		for (int i = 0; i < courses.size(); i = i + 1)
+		{
+			for (int j = 0; j < generalCourses.size(); j = j + 1)
+			{
+				if (generalCourses.get(j).getGeneralCourseName().equals(courses.get(i).getGeneralCourseName()))
+				{
+					courseExists = true;
+				}
+			}
+			
+			if (courseExists)
+			{
+				
+				courseExists = false;
+			}
+			else
+			{
+				untakenCourses.add(courses.get(i));
+				
+			}
+			
+		}
+		
+		return untakenCourses;
+	}
+	
+	
+	private ArrayList<CourseSuggestionOption> generateOptions(ArrayList<Course> courses)
+	{
+		ArrayList<CourseSuggestionOption> scheisse = new ArrayList<CourseSuggestionOption>();
+		for (Course cs: courses)
+		{
+			scheisse.add(new CourseSuggestionOption(cs));
+		}
+		
+		return scheisse;
+		
+		
+	}
+	
+	private Course getSelectedCourse(String courseName)
+	{
+		ArrayList<Course> geneCours = Course.generateComSciCourses();
+		
+		for (Course c : geneCours)
+		{
+			if (c.getGeneralCourseName().equals(courseName))
+			{
+				return c;
+			}
+		}
+		return null;
+	}
+	
+
 }
