@@ -175,21 +175,32 @@ public class Course extends GeneralCourse
 				"This course introduces students to the Java language", "Jackie Wang", 
 				new CourseSchedule("LSB 105", "R", "18:00 - 19:30"), activity2030, prereqs2030);
 		
+		mockComCourses.add(java2);
+		
 		Course dataStructures = new Course("EECS 2011: Data Structures", 3, "F Term", 
 				"This course introduces students to some of the most common data structures", "Tyler Noble", 
 				new CourseSchedule("LAS B", "S", "09:00 - 10:30"), activity2011, prereqs2011);
+		
+		mockComCourses.add(dataStructures);
 		
 		Course compOrg = new Course("EECS 2021: Computer Organization", 4, "F Term", 
 				"This course introduces students to basic concepts of computer hardware", "Vivian Octave", 
 				new CourseSchedule("LAS B", "F", "16:30-18:00"),activity2021, prereqs2021);
 		
+		mockComCourses.add(compOrg);
+		
 		Course softDesign = new Course("EECS 2031: Software Tools", 3, "W Term", 
 				"This course introduces students to C programming Language and shell scripting", "Nikki Benz", 
 				new CourseSchedule("CB 115", "W", "10:30-12:00"),activity2031, prereqs2031);
+		mockComCourses.add(softDesign);
+		
+		
 		
 		Course theoryOfComp = new Course("EECS 2001: Inroduction to the theory of computing", 3, "W Term", 
 				"This course introduces students to depression and suicide and how to deal with a low GPA", "Stella Cox", 
 				new CourseSchedule("SLH F", "S", "14:00-15:30"),activity2001, prereqs2001);
+		
+		mockComCourses.add(theoryOfComp);
 		
 		
 		//EECS 1001
@@ -280,7 +291,7 @@ public class Course extends GeneralCourse
 		
 		//EECS 3421
 		ArrayList<GeneralCourse> databasePreq = new ArrayList<GeneralCourse>();
-		ethicsPreq.add(new GeneralCourse("EECS 2030: Java", 3));
+		databasePreq.add(new GeneralCourse("EECS 2030: Java", 3));
 		
 		
 		Course database = new Course("EECS 3421: Introduction to Database Systems", 3, "W Term", 

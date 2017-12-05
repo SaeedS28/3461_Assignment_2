@@ -41,6 +41,15 @@ public class GeneralCourse
 		return this.generalCourseName;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		GeneralCourse other = (GeneralCourse) obj;
+		return this.getGeneralCourseName().equals(other.getGeneralCourseName());
+	}
+	
+	
+
 	
 
 }

@@ -2,6 +2,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import javax.swing.*;
 
@@ -169,8 +170,7 @@ public class CourseSelectForm extends JFrame {
 							}
 								
 							
-							//System.out.println("rape me, daddy!");
-							//dispose							
+								
 						}
 						else
 						{
@@ -253,6 +253,59 @@ public class CourseSelectForm extends JFrame {
 			}
 		}
 		
+		
+		ArrayList<GeneralCourse> mK = studentInfo.getFinishedCoursesList();
+		//printArray(mK);
+		
+		for (int m = 0; m < untakenCourses.size(); m = m + 1)
+		{
+			Course cD = untakenCourses.get(m);
+			int counter = 0;
+			ArrayList<GeneralCourse> preReq = cD.getPrereq();
+			//printArray(preReq);
+			HashSet<GeneralCourse> hS = new HashSet<GeneralCourse>(preReq);
+			
+			
+			
+			
+			
+			for (GeneralCourse mT : hS)
+			{
+				//JOptionPane.showMessageDialog(null, mT.getGeneralCourseName());
+				if (mK.contains(mT))
+				{
+					counter++;
+				}
+				
+				//theCollector = theCollector && preqExists;
+				/*
+				for (GeneralCourse kT : preReq)
+				{
+					//JOptionPane.showMessageDialog(null, cD.getGeneralCourseName() + " " + mT.getGeneralCourseName() + " " + kT.getGeneralCourseName());
+					if (mT.getGeneralCourseName().equals(kT.getGeneralCourseName()))
+					{
+						preqExists = true;
+					}
+					theCollector = theCollector && preqExists;
+				}
+				*/
+				
+				
+			}
+			
+			
+			//JOptionPane.showMessageDialog(null, cD.getGeneralCourseName() + "   " + counter + "  " + hS.size());
+			if (counter != hS.size())
+			{
+				
+				untakenCourses.remove(cD);
+			}
+			counter = 0;
+			
+			
+		}
+			
+		
 		return untakenCourses;
 	}
 	
@@ -268,6 +321,15 @@ public class CourseSelectForm extends JFrame {
 		return scheisse;
 		
 		
+	}
+	
+	private void printArray(ArrayList<GeneralCourse> oK)
+	{
+		System.out.print("\n");
+		for (GeneralCourse c: oK)
+		{
+			System.out.println(c.getGeneralCourseName());
+		}
 	}
 	
 	private Course getSelectedCourse(String courseName)

@@ -1,0 +1,46 @@
+import java.util.*;
+
+
+public class GeneralCourse 
+{
+	
+	
+	private String generalCourseName;
+	private int courseCredits;
+	
+	public GeneralCourse(String generalCourseName, int courseCredits)
+	{
+		this.setGeneralCourseName(generalCourseName);
+		this.setCourseCredits(courseCredits);
+	}
+	
+	public String getGeneralCourseName()
+	{
+		return this.generalCourseName;
+	}
+	
+	public void setGeneralCourseName(String generalCourseName)
+	{
+		this.generalCourseName = generalCourseName;
+	}
+	
+	
+	public int getCourseCredits()
+	{
+		return this.courseCredits;
+	}
+	
+	public void setCourseCredits(int courseCredits)
+	{
+		this.courseCredits = courseCredits;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.generalCourseName;
+	}
+
+	
+
+}

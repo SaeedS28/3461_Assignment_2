@@ -151,13 +151,7 @@ public class MainForm extends JFrame{
 					public void actionPerformed(ActionEvent arg0) {
 						if(arg0.getSource()==addCourse) {
 							if(count<test.length) {
-								//test[count].getRemoveButton().setVisible(true);
-								//test[count].getExchangeButton().setVisible(true);
-								//test[count].getCourseLabel().setVisible(true);
-								//test[count].getCourseLabel().setText("SXSM 1560: Intro to Porn studies");
-								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
-								
-								//	JOptionPane.showMessageDialog(null, "Go fuck yourself!");
+						
 								toAddOrToExchange = true;
 								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, null, currentlyEnrolledCourses, true);
 								fu.setVisible(true);
