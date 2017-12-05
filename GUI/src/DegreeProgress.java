@@ -1,6 +1,7 @@
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 public class DegreeProgress extends JFrame {
@@ -19,10 +20,14 @@ public class DegreeProgress extends JFrame {
 	JButton back;
 	String [] dummyData= {"1","2","3","4","5","6"};
 	
+	private ArrayList<GeneralCourse> thisCompletedCourses;
+	
 	
 	@SuppressWarnings("rawtypes")
-	public DegreeProgress () {
+	public DegreeProgress (ArrayList<GeneralCourse> completedCourses) {
 		super("Select Courses");
+		
+		thisCompletedCourses = completedCourses;
 		
 		this.setSize(675,500);
 		this.setResizable(false);
@@ -45,7 +50,7 @@ public class DegreeProgress extends JFrame {
 		titlePanel.add(title);
 		
 		//List components
-		courseOption = new JList(dummyData);
+		courseOption = new JList(thisCompletedCourses.toArray());
 		courseOption.setVisible(true);
 		courseOption.setFont(font2);
 		courseOption.setVisibleRowCount(8);
@@ -69,6 +74,8 @@ public class DegreeProgress extends JFrame {
 		this.add(titlePanel);
 		this.add(listPanel);
 		this.add(backPanel);
+		
+		
 		
 		back.addActionListener(new ActionListener() {
 

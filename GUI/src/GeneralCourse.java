@@ -35,6 +35,12 @@ public class GeneralCourse
 		this.courseCredits = courseCredits;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.generalCourseName;
+	}
 
+	
 
 }

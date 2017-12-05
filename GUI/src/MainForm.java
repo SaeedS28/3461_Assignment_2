@@ -23,6 +23,8 @@ public class MainForm extends JFrame{
 	JPanel addCoursePanel;
 	JButton addCourse;
 	
+	boolean toAddOrToExchange;
+	
 	private StudentLogin loginAttempt;
 	private ArrayList<StudentInfo> sampleStudentInfo = StudentInfo.sampleStudentInfo();
 	private ArrayList<Course> currentlyEnrolledCourses;
@@ -109,7 +111,7 @@ public class MainForm extends JFrame{
 				
 				test=new CompositeAdd[10];
 				for(int i=0;i<test.length;i++) {
-					test[i]=new CompositeAdd(mf);
+					test[i]=new CompositeAdd(selectedUser, mf, enrolledCourses);
 				}
 				for(int i =0;i<test.length;i++) {
 					this.add(test[i].getAddPanel());
@@ -122,7 +124,7 @@ public class MainForm extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if(e.getSource()==degreeProgress) {
-							DegreeProgress dp = new DegreeProgress();
+							DegreeProgress dp = new DegreeProgress(sampleStudentInfo.get(0).getFinishedCoursesList());
 							dp.setVisible(true);
 						}
 						
@@ -156,8 +158,8 @@ public class MainForm extends JFrame{
 								//addCoursePanel.setLocation(30, test[count].getCourseLabel().getLo);
 								
 								//	JOptionPane.showMessageDialog(null, "Go fuck yourself!");
-								
-								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, currentlyEnrolledCourses);
+								toAddOrToExchange = true;
+								CourseSelectForm fu = new CourseSelectForm(selectedUser, mf, null, currentlyEnrolledCourses, true);
 								fu.setVisible(true);
 								count++;
 							}
@@ -168,6 +170,8 @@ public class MainForm extends JFrame{
 					}
 					
 				});
+				
+				
 	}
 	
 	
@@ -198,6 +202,7 @@ public class MainForm extends JFrame{
 			this.test[count].getRemoveButton().setVisible(true);
 			
 			this.test[count].getExchangeButton().setVisible(true);
+			
 			
 			count++;
 		}
@@ -287,6 +292,14 @@ public class MainForm extends JFrame{
 			
 
 		
+	}
+	
+	public void exchangeCourse(Course oldCourse, Course newCourse)
+	{
+		int getExchangeCourseIndex = getCourseIndexInArray(oldCourse);
+		test[getExchangeCourseIndex].setAppendedCourse(newCourse);
+		test[getExchangeCourseIndex].getCourseLabel().setText(newCourse.getGeneralCourseName() + " (" + newCourse.getCourseTerm() + ")");
+		currentlyEnrolledCourses.set(currentlyEnrolledCourses.indexOf(oldCourse), newCourse);
 	}
 	
 	

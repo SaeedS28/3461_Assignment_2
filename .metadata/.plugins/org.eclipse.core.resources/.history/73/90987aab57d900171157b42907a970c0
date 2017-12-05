@@ -1,0 +1,142 @@
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+public class CompositeAdd {
+	
+	JPanel addPanel;
+	JPanel exchangePanel;
+	JPanel courseDetailsPanel;
+	JButton exchangeButton;
+	JButton removeButton;
+	JLabel courseDetails;
+	
+	public int calledAl = 0;
+	private StudentInfo thisInfo;
+	private Course appendedCourse;
+	private MainForm thisMf;
+	private ArrayList<Course> thisCourses;
+	static int count=70;
+	
+	public CompositeAdd(StudentInfo sInfo, MainForm mf, ArrayList<Course> courses) 
+	{
+		count+=30;
+		Font font= new Font("Arial", Font.BOLD, 20);
+		thisMf = mf;
+		thisInfo = sInfo;
+		thisCourses = courses;
+		//this.setAppendedCourse(appendedCourse);
+		addPanel=new JPanel();
+		exchangePanel = new JPanel();
+		courseDetailsPanel =new JPanel();
+		exchangeButton = new JButton("+/-");
+		exchangeButton.setToolTipText("Exchange the course with another");
+		exchangeButton.setVisible(false);
+		exchangeButton.setFont(font);
+		removeButton = new JButton("-");
+		removeButton.setToolTipText("Remove the course");
+		removeButton.setVisible(false);
+		removeButton.setFont(font);
+		
+		courseDetails = new JLabel();
+		courseDetails.setVisible(false);
+		courseDetails.setFont(font);
+		
+		//component setup
+		addPanel.setLocation(610, count);
+		addPanel.setSize(50,40);
+		addPanel.add(removeButton);
+		
+		exchangePanel.setLocation(670, count);
+		exchangePanel.setSize(60,40);
+		exchangePanel.add(exchangeButton);
+		
+		courseDetailsPanel.setLocation(30, count);
+		courseDetailsPanel.setSize(550, 40);
+		courseDetailsPanel.add(courseDetails);
+		
+		
+		
+	}
+	
+	public JLabel getCourseLabel() {
+		return courseDetails;
+	}
+	
+	public JButton getExchangeButton() {
+		return this.exchangeButton;
+	}
+	
+	public JButton getRemoveButton() {
+		return this.removeButton;
+	}
+	
+	public JPanel getAddPanel() {
+		return this.addPanel;
+	}
+	
+	public JPanel getExchangePanel() {
+		return this.exchangePanel;
+	}
+	
+	public JPanel getCourseDetailPanel() {
+		return this.courseDetailsPanel;
+	}
+	
+	public Course getAppendedCourse()
+	{
+		return this.appendedCourse;
+	}
+	
+	public void setAppendedCourse(Course appendedCourse)
+	{
+		this.appendedCourse = appendedCourse;
+		removeButton.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				if (e.getSource() == removeButton && appendedCourse != null && calledAl == 0)
+				{
+					
+						int response = JOptionPane.showConfirmDialog(null, "\"" + courseDetails.getText()   + "\" will be removed. Continue?", "Confirm course removal",JOptionPane.YES_NO_OPTION);
+						if (response == JOptionPane.YES_OPTION)
+						{
+							calledAl = 1;
+							thisMf.removeCourseFromList(appendedCourse);
+						}
+						
+					
+				}
+			}	
+		});
+		
+		exchangeButton.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						if(e.getSource() == exchangeButton && appendedCourse != null && calledAl == 0) 
+						{
+							int responseTwo = JOptionPane.showConfirmDialog(null, "\"" + courseDetails.getText()   + "\" will be exchanged. Continue?", "Confirm course exchange",JOptionPane.YES_NO_OPTION);
+							
+							if (responseTwo == JOptionPane.YES_OPTION)
+							{	
+								
+								CourseSelectForm exchangeForm = new CourseSelectForm(thisInfo, thisMf, appendedCourse, thisCourses, false);
+								exchangeForm.setVisible(true);
+								
+							}
+						
+						}
+					}
+					
+				});
+	}
+	
+}

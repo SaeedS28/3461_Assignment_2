@@ -1,6 +1,7 @@
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -14,16 +15,21 @@ public class CompositeAdd {
 	JLabel courseDetails;
 	
 	int calledAl = 0;
+	int calledAs = 0;
 	
+	private StudentInfo thisInfo;
 	private Course appendedCourse;
 	private MainForm thisMf;
+	private ArrayList<Course> thisCourses;
 	static int count=70;
 	
-	public CompositeAdd(MainForm mf) 
+	public CompositeAdd(StudentInfo sInfo, MainForm mf, ArrayList<Course> courses) 
 	{
 		count+=30;
 		Font font= new Font("Arial", Font.BOLD, 20);
 		thisMf = mf;
+		thisInfo = sInfo;
+		thisCourses = courses;
 		//this.setAppendedCourse(appendedCourse);
 		addPanel=new JPanel();
 		exchangePanel = new JPanel();
@@ -111,6 +117,36 @@ public class CompositeAdd {
 				}
 			}	
 		});
+		
+		exchangeButton.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) 
+					{
+						if(e.getSource() == exchangeButton && appendedCourse != null) 
+						{
+							int responseTwo;
+							
+						
+							responseTwo = JOptionPane.showConfirmDialog(null, "\"" + courseDetails.getText()   + "\" will be exchanged. Continue?", "Confirm course exchange",JOptionPane.YES_NO_OPTION);
+							if (responseTwo == JOptionPane.YES_OPTION )
+							{	
+									
+								CourseSelectForm exchangeForm = new CourseSelectForm(thisInfo, thisMf, appendedCourse, thisCourses, false);
+								exchangeForm.setVisible(true);
+								//calledAs=1;
+								//calledAs = 0;
+								
+							}
+							
+						}
+							
+						
+					}
+					
+					
+				});
 	}
+	
 	
 }

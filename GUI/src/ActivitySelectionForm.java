@@ -1,9 +1,12 @@
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
@@ -24,11 +27,18 @@ public class ActivitySelectionForm extends JFrame {
 	JList tutorialOption;
 	JScrollPane tutorialScroller;
 	JPanel tutorialListPanel;
-	
+	MainForm thisMf;
+	CourseSelectForm thisCf;
 	ArrayList<CourseActivity> activity;
 	
-	public ActivitySelectionForm(Course course) {
+	boolean tutVisible = false;
+	boolean labVisible = false;
+	
+	
+	public ActivitySelectionForm(MainForm mf, CourseSelectForm cf, Course course) {
 		super("Select the activity");
+		thisMf = mf;
+		thisCf = cf;
 		activity= course.getCourseActivity();
 		this.setSize(675,450);
 		this.setResizable(false);
@@ -64,6 +74,7 @@ public class ActivitySelectionForm extends JFrame {
 			listPanel.setSize(500,150);
 			listPanel.add(scroller);
 			this.add(listPanel);
+			labVisible = true;
 		}
 		else {
 		//Tutorial list components
@@ -79,11 +90,53 @@ public class ActivitySelectionForm extends JFrame {
 			tutorialListPanel.setSize(500,150);
 			tutorialListPanel.add(tutorialScroller);
 			this.add(tutorialListPanel);
+			tutVisible = true;
 		}
 		//Confirm button components
 		confirm=new JButton("Confirm");
 		confirm.setFont(font2);
 		confirm.setVisible(true);
+		confirm.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				if (e.getSource() == confirm)
+				{
+					if (tutVisible)
+					{
+						if (tutorialOption.getSelectedIndex() > -1)
+						{
+							mf.addToCourseList(course);
+							
+							dispose();	
+							cf.dispose();
+						}
+						else
+						{
+							JOptionPane.showMessageDialog(null, "No tutorial/lab was selected.");
+						}
+					}
+					else
+					{
+						if (courseOption.getSelectedIndex() > -1)
+						{
+							mf.addToCourseList(course);
+							dispose();
+							cf.dispose();
+						}
+						else
+						{
+							JOptionPane.showMessageDialog(null, "No tutorial/lab was selected.");
+						}
+					}
+					
+				}
+				
+			}	
+		});
 		confirmPanel=new JPanel();
 		confirmPanel.setLocation(290, 350);
 		confirmPanel.setSize(120, 50);

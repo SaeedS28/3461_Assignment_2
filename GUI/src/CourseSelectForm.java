@@ -31,17 +31,26 @@ public class CourseSelectForm extends JFrame {
 	String [] dummyData= {"1","2","3","4","5","6"};
 	StudentInfo studentInfo;
 	MainForm localMf;
+	CourseSelectForm cf;
+	
+	int calledAf = 0;
+	
+	boolean toAddOrToRemove;
 	private ArrayList<CourseSuggestionOption> studentOptions;
 	
 	private ArrayList<Course> enrolledCourses;
+	private Course theSelectedCourse;
 	
 	@SuppressWarnings("rawtypes")
 	
-	public CourseSelectForm(StudentInfo studentInfo, MainForm mf, ArrayList<Course> studentEnrolledCourses) 
+	public CourseSelectForm(StudentInfo studentInfo, MainForm mf, Course selectedCourse, ArrayList<Course> studentEnrolledCourses, boolean flag) 
 	{
 		super("Select Course");
 		this.studentInfo=studentInfo;
+		toAddOrToRemove = flag;
+		cf = this;
 		this.enrolledCourses = studentEnrolledCourses;
+		theSelectedCourse = selectedCourse;
 		this.setSize(675,480);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -134,7 +143,7 @@ public class CourseSelectForm extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
-				if(e.getSource()==enter) 
+				if(e.getSource()==enter && calledAf == 0) 
 				{
 					int response = JOptionPane.showConfirmDialog(null, "\"" + studentOptions.get(courseOption.getSelectedIndex()) +"\" will be added. Continue?", "Confirm course addition",JOptionPane.YES_NO_OPTION);
 					
@@ -144,14 +153,28 @@ public class CourseSelectForm extends JFrame {
 						
 						if (selectedCourse.getCourseActivity() == null)
 						{
-							mf.addToCourseList(selectedCourse);
-							dispose();
+							if (toAddOrToRemove)
+							{
+								mf.addToCourseList(selectedCourse);
+								dispose();
+							}
+							else
+							{
+								
+									mf.exchangeCourse(theSelectedCourse, selectedCourse);
+									dispose();
+									calledAf = 1;
+								
+									
+							}
+								
+							
 							//System.out.println("rape me, daddy!");
 							//dispose							
 						}
 						else
 						{
-							ActivitySelectionForm ca = new ActivitySelectionForm(selectedCourse);
+							ActivitySelectionForm ca = new ActivitySelectionForm(mf, cf, selectedCourse);
 							ca.setVisible(true);
 							
 						}
